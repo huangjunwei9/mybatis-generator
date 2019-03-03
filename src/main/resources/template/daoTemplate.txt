@@ -1,0 +1,13 @@
+package ${packgePath}.dao;
+
+import ${extendsBasePath}.dao.BaseDao;
+import ${packgePath}.entity.${className};
+
+/**
+ * ${classDescription}
+ * @author ${author}
+ * @datatime ${datatime}
+ */
+public interface ${className}Dao extends BaseDao<${className},${primaryKey}>{
+	
+}

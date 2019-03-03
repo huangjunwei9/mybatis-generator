@@ -1,0 +1,21 @@
+package ${packgePath}.entity;
+
+import ${extendsBasePath}.entity.BaseEntity;
+import org.apache.ibatis.type.Alias;
+import javax.persistence.Table;
+
+/**
+ * ${classDescription}
+ * @author ${author}
+ * @datatime ${datatime}
+ */
+@Alias(value = "${alias}")
+@Table(name="${table}")
+public class ${className} extends BaseEntity<${primaryKey}>{
+	
+	private static final long serialVersionUID = 1L;
+	
+${entityData}
+	
+
+}

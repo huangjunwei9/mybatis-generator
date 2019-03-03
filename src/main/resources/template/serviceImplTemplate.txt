@@ -1,0 +1,27 @@
+package ${packgePath}.service.impl;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import ${extendsBasePath}.service.impl.BaseServiceImpl;
+import ${packgePath}.dao.${className}Dao;
+import ${packgePath}.entity.${className};
+import ${packgePath}.service.${className}Service;
+/**
+ * ${classDescription}
+ * @author ${author}
+ * @datatime ${datatime}
+ */
+@Service
+public class ${className}ServiceImpl extends BaseServiceImpl<${className},${primaryKey}> implements ${className}Service {
+	@Resource
+	private ${className}Dao ${className1}Dao;
+	
+	@PostConstruct
+	public void initialize(){
+		super.setBaseDao(${className1}Dao);
+	}
+	
+}
