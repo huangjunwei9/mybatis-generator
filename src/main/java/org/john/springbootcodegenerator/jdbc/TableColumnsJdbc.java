@@ -18,16 +18,28 @@ public class TableColumnsJdbc {
 	private JdbcTemplate jdbcTemplate;
 	@Autowired
 	private CodeGeneratorConfig jdbcTableConfig;
-	
 
+	/**
+	 * 获取表结构
+	 * 
+	 * @author johnDeng
+	 * @dataTime 2019年3月5日下午3:51:10
+	 * @param tableName
+	 * @return
+	 */
 	public List<TableColumns> getListByTable(String tableName) {
 		String sql = "SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName,"
 				+ " ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType,"
 				+ " CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent "
-				+ " FROM information_schema.columns WHERE table_schema = '" + jdbcTableConfig.getDatabaseName() + "'  AND table_name = '"
-				+ tableName + "' ";
+				+ " FROM information_schema.columns WHERE table_schema = '" + jdbcTableConfig.getDatabaseName()
+				+ "'  AND table_name = '" + tableName + "' ";
 		logger.debug(sql);
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<TableColumns>(TableColumns.class));
+	}
+
+	public List<TableColumns> columnsFiltes(List<TableColumns> allTableColumns) {
+
+		return null;
 	}
 
 }

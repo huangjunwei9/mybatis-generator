@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ClassCommonsTest extends SpringbootCodeGeneratorApplicationTests {
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	public CodeGeneratorConfig classCommons;
 	@Autowired

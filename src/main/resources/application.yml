@@ -9,7 +9,7 @@ my:
   #模板的总路径
   templateBasePath: classpath:template/
   #生成文件的总路径
-  writeFileBasePath: G:\eclispe\spring-boot-code-generator\src\main\resources\write\
+  writeFileBasePath: E:\mayun\spring-boot-code-generator\src\main\resources\write\
   #数据库表前缀
   tablePrefix: t_
   #继承类路径
