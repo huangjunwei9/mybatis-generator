@@ -101,7 +101,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		templateServiceImplString = templateServiceImplString.replace("${packgePath}", codeGeneratorConfig.getPackgePath());
 		
 		templateServiceImplString = templateServiceImplString.replace("${className}", tableColumnsService.getClassName(tableName));
-		templateServiceImplString = templateServiceImplString.replace("${className1}", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+		templateServiceImplString = templateServiceImplString.replace("${lowerClassName}", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
 		templateServiceImplString = templateServiceImplString.replace("${primaryKey}",tableColumnsService.getPrimaryKeyDataType(tableName));
 		templateServiceImplString = templateServiceImplString.replace("${extendsBasePath}", codeGeneratorConfig.getExtendsBasePath());
 
@@ -119,7 +119,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		String templateControllerString = FileUtlis.readFileText(filePathUtils.getTemplateControllerFileName());
 		templateControllerString = templateControllerString.replace("${packgePath}", codeGeneratorConfig.getPackgePath());
 		templateControllerString = templateControllerString.replace("${className}", tableColumnsService.getClassName(tableName));
-		templateControllerString = templateControllerString.replace("${className1}", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+		templateControllerString = templateControllerString.replace("${lowerClassName}", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
 		templateControllerString = templateControllerString.replace("${classDescription}", classDescription);
 		templateControllerString = templateControllerString.replace("${author}", codeGeneratorConfig.getAuthor());
 		templateControllerString = templateControllerString.replace("${datatime}", DateTimeUtils.getDatatime());

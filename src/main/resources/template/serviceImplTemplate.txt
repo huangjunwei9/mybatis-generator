@@ -17,11 +17,11 @@ import ${packgePath}.service.${className}Service;
 @Service
 public class ${className}ServiceImpl extends BaseServiceImpl<${className},${primaryKey}> implements ${className}Service {
 	@Resource
-	private ${className}Dao ${className1}Dao;
+	private ${className}Dao ${lowerClassName}Dao;
 	
 	@PostConstruct
 	public void initialize(){
-		super.setBaseDao(${className1}Dao);
+		super.setBaseDao(${lowerClassName}Dao);
 	}
 	
 }

@@ -14,15 +14,15 @@ import ${extendsBasePath}.controller.BaseController;
  * @datatime ${datatime}
  */
 @Controller
-@RequestMapping("/pc/${className1}")
+@RequestMapping("/pc/${lowerClassName}")
 public class ${className}Controller extends BaseController<${className},${primaryKey}>{
 	
 	@Resource
-	private ${className}Service ${className1}Service;
+	private ${className}Service ${lowerClassName}Service;
 	
 	@PostConstruct
 	public void initialize() {
-		super.setBaseService(${className1}Service);
+		super.setBaseService(${lowerClassName}Service);
 	}
 	
 }
