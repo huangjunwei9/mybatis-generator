@@ -3,6 +3,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.106.195.105:3306/synthesis_portal_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
-    username: ht
-    password: Bigdata_1
+    url: ${my.url}
+    username: ${my.username}
+    password: ${my.password}

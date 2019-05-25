@@ -5,7 +5,7 @@ package org.john.springbootcodegenerator.common;
  * @author JohnDeng
  * @datatime 2019年1月17日下午5:24:11
  */
-public class Commons {
+public class KeyCommons {
 
 	/**
 	 * 主键

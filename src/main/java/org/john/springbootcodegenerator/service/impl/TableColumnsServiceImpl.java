@@ -6,9 +6,9 @@ import javax.annotation.Resource;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.john.springbootcodegenerator.bean.GlobalSettings;
 import org.john.springbootcodegenerator.bean.TableColumns;
-import org.john.springbootcodegenerator.common.Commons;
-import org.john.springbootcodegenerator.config.CodeGeneratorConfig;
+import org.john.springbootcodegenerator.common.KeyCommons;
 import org.john.springbootcodegenerator.enums.DataTypeEnums;
 import org.john.springbootcodegenerator.jdbc.TableColumnsJdbc;
 import org.john.springbootcodegenerator.service.TableColumnsService;
@@ -20,7 +20,7 @@ public class TableColumnsServiceImpl implements TableColumnsService {
 	@Resource
 	private TableColumnsJdbc tableColumnsJdbc;
 	@Resource
-	public CodeGeneratorConfig jdbcTableConfig;
+	public GlobalSettings jdbcTableConfig;
 
 	@Override
 	public String getAliasName(String tableName) {
@@ -49,7 +49,7 @@ public class TableColumnsServiceImpl implements TableColumnsService {
 		List<TableColumns> list = getListByTable(tableName);
 		if (CollectionUtils.isNotEmpty(list)) {
 			for (TableColumns table : list) {
-				boolean isPK = Commons.PK.equals(table.getCloumnKey());
+				boolean isPK = KeyCommons.PK.equals(table.getCloumnKey());
 				if (isPK) {
 					return DataTypeEnums.getJavaDataTypeByMysqlDataType(table.getDataType());
 				}
