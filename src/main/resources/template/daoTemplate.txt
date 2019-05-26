@@ -1,4 +1,4 @@
-package ${packgePath}.dao;
+package ${packgePath};
 
 import ${extendsBasePath}.dao.BaseDao;
 import ${packgePath}.entity.${className};

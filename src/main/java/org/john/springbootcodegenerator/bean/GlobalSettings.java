@@ -5,11 +5,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * 全局配置
+ * 
  * @author JohnDeng
  * @datatime 2019年3月3日下午3:54:46
  */
 @Component
-@ConfigurationProperties(prefix = "my")
+@ConfigurationProperties(prefix = "my。global-settings")
 public class GlobalSettings {
 
 	/**
@@ -24,22 +25,22 @@ public class GlobalSettings {
 	 * 读取模板总路径
 	 */
 	private String templateBasePath;
-	/**
-	 * 生成文件总路径
-	 */
-	private String writeFileBasePath;
-	/**
-	 * 生成继承文件总路径
-	 */
-	private String extendsBasePath;
-	/**
-	 * mysql url
-	 */
-	public String url;
+
 	/**
 	 * 数据库表名前缀
 	 */
 	private String tablePrefix;
+	
+	
+	private String writeFileBasePath;
+	
+	public String getWriteFileBasePath() {
+		return writeFileBasePath;
+	}
+
+	public void setWriteFileBasePath(String writeFileBasePath) {
+		this.writeFileBasePath = writeFileBasePath;
+	}
 
 	public String getAuthor() {
 		return author;
@@ -65,29 +66,6 @@ public class GlobalSettings {
 		this.templateBasePath = templateBasePath;
 	}
 
-	public String getWriteFileBasePath() {
-		return writeFileBasePath;
-	}
-
-	public void setWriteFileBasePath(String writeFileBasePath) {
-		this.writeFileBasePath = writeFileBasePath;
-	}
-
-	public String getExtendsBasePath() {
-		return extendsBasePath;
-	}
-
-	public void setExtendsBasePath(String extendsBasePath) {
-		this.extendsBasePath = extendsBasePath;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
 
 	public String getTablePrefix() {
 		return tablePrefix;

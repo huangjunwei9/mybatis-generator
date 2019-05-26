@@ -1,24 +1,54 @@
+server:
+  port: 10000
 spring:
-  profiles:
-    active: dev
-my:
-  #作者
-  author: johnDeng
-  #生成文件的包总路径
-  packgePath: com.design.framework
-  #模板的总路径
-  templateBasePath: classpath:template/
-  #生成文件的总路径
-  writeFileBasePath: E:\mayun\spring-boot-code-generator\src\main\resources\write\
-  #数据库表前缀
-  tablePrefix: t_
-  #继承类路径
-  extendsBasePath: com.design.framework.base
-  #mysql url
-  url: jdbc:mysql://47.106.195.105:3306/synthesis_portal_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
-  #mysql 用户名
-  username: ht
-  #mysql 密码
-  password: Bigdata_1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${my.url}
+    username: ${my.datasource-settings.username}
+    password: ${my.datasource-settings.password}
+    
+my-config:
+  #全局配置
+  global-settings:
+    #作者
+    author: johnDeng
+    #生成文件的包总路径
+    packge-path: com.design.framework
+    #模板的总路径
+    template-base-path: classpath:template/
+    #生成文件的总路径(绝对路径)
+    write-file-base-path: E:\mayun\spring-boot-code-generator\src\main\resources\write\
+    #数据库表前缀
+    table-prefix: t_
+  #继承配置
+  extends-settings:
+    #需要继承Entity父类
+    extends-base-entity: true
+    base-entity-path: 
+    
+    #需要继承DAO父类
+    extends-base-dao: true
+    base-dao-path:
+    
+    #需要继承Service父类
+    extends-base-service: true
+    base-service-path:
+    
+    #需要继承ServiceImpl父类
+    extends-base-service-impl: true
+    extends-base-service-impl-path:
+     
+    #需要继承Controller父类
+    extends-base-controller: true
+    extends-base-controller-path:
+    
+  #数据库配置
+  datasource-settings:  
+    #mysql url
+    url: jdbc:mysql://47.106.195.105:3306/synthesis_portal_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
+    #mysql 用户名
+    username: ht
+    #mysql 密码
+    password: Bigdata_1
   
   

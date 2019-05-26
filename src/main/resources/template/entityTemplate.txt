@@ -1,6 +1,6 @@
-package ${packgePath}.entity;
+package ${packgePath};
 
-import ${extendsBasePath}.entity.BaseEntity;
+import ${extendsBasePath};
 import org.apache.ibatis.type.Alias;
 import javax.persistence.Table;
 

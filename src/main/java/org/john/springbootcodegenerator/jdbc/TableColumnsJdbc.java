@@ -2,7 +2,7 @@ package org.john.springbootcodegenerator.jdbc;
 
 import java.util.List;
 
-import org.john.springbootcodegenerator.bean.GlobalSettings;
+import org.john.springbootcodegenerator.bean.DatasourceSettings;
 import org.john.springbootcodegenerator.bean.TableColumns;
 import org.john.springbootcodegenerator.utils.DataBaseUtils;
 import org.slf4j.Logger;
@@ -17,8 +17,8 @@ public class TableColumnsJdbc {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	@Autowired
-	private GlobalSettings globalSettings;
+	@Autowired 
+	private DatasourceSettings datasourceSettings;
 
 	/**
 	 * 获取表结构
@@ -33,7 +33,7 @@ public class TableColumnsJdbc {
 				+ " ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType,"
 				+ " CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent "
 				+ " FROM information_schema.columns WHERE table_schema = '"
-				+ DataBaseUtils.getDatabaseName(globalSettings.getUrl()) + "'  AND table_name = '" + tableName + "' ";
+				+ DataBaseUtils.getDatabaseName(datasourceSettings.getUrl()) + "'  AND table_name = '" + tableName + "' ";
 		logger.debug(sql);
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<TableColumns>(TableColumns.class));
 	}

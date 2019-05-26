@@ -1,4 +1,4 @@
-package ${packgePath}.service;
+package ${packgePath};
 
 import ${extendsBasePath}.service.BaseService;
 import ${packgePath}.entity.${className};

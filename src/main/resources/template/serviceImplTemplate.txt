@@ -1,4 +1,4 @@
-package ${packgePath}.service.impl;
+package ${packgePath};
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;

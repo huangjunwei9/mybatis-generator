@@ -1,4 +1,4 @@
-package ${packgePath}.controller;
+package ${packgePath};
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -13,8 +13,9 @@ import ${extendsBasePath}.controller.BaseController;
  * @author ${author}
  * @datatime ${datatime}
  */
-@Controller
+@RestController
 @RequestMapping("/pc/${lowerClassName}")
+@SystemLog(modelName="${classDescription}")
 public class ${className}Controller extends BaseController<${className},${primaryKey}>{
 	
 	@Resource

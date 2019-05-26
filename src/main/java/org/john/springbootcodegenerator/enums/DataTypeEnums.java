@@ -13,7 +13,6 @@ public enum DataTypeEnums {
 	NUMERIC("NUMERIC","java.math.BigDecimal"),
 	DECIMAL("DECIMAL","java.math.BigDecimal"),
 	
-	
 	BLOB("blob","byte[]"),
 	TEXT("text","String"),
 	INTEGER("integer","Integer"),
