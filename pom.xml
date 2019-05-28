@@ -9,9 +9,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.john</groupId>
-	<artifactId>springboot-code-generator</artifactId>
+	<artifactId>spring-boot-code-generator</artifactId>
 	<version>1.0.0</version>
-	<name>springboot-code-generator</name>
+	<name>spring-boot-code-generator</name>
 	<description></description>
 
 	<properties>
