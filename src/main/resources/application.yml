@@ -45,10 +45,10 @@ my-config:
   #数据库配置
   datasource-settings:  
     #mysql url
-    url: jdbc:mysql://47.106.195.105:3306/synthesis_portal_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
+    url: jdbc:mysql://10.88.1.80:3306/unitoll_internet_cms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
     #mysql 用户名
-    username: ht
+    username: root
     #mysql 密码
-    password: Bigdata_1
+    password: hgrica1@
   
   
