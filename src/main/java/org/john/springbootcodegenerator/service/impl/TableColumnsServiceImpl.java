@@ -6,9 +6,9 @@ import javax.annotation.Resource;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.john.springbootcodegenerator.bean.GlobalSettings;
-import org.john.springbootcodegenerator.bean.TableColumns;
 import org.john.springbootcodegenerator.common.KeyCommons;
+import org.john.springbootcodegenerator.config.GlobalSettings;
+import org.john.springbootcodegenerator.entity.TableColumns;
 import org.john.springbootcodegenerator.enums.DataTypeEnums;
 import org.john.springbootcodegenerator.jdbc.TableColumnsJdbc;
 import org.john.springbootcodegenerator.service.TableColumnsService;

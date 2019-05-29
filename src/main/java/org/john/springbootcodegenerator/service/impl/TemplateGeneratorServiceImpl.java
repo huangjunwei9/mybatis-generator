@@ -5,9 +5,9 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.john.springbootcodegenerator.bean.ExtendsSettings;
-import org.john.springbootcodegenerator.bean.GlobalSettings;
 import org.john.springbootcodegenerator.common.TemplateCommon;
+import org.john.springbootcodegenerator.config.ExtendsSettings;
+import org.john.springbootcodegenerator.config.GlobalSettings;
 import org.john.springbootcodegenerator.service.TableColumnsService;
 import org.john.springbootcodegenerator.service.TemplateGeneratorService;
 import org.john.springbootcodegenerator.utils.DateTimeUtils;

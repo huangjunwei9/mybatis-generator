@@ -1,4 +1,4 @@
-package org.john.springbootcodegenerator.bean;
+package org.john.springbootcodegenerator.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @datatime 2019年3月3日下午3:54:46
  */
 @Component
-@ConfigurationProperties(prefix = "my。global-settings")
+@ConfigurationProperties(prefix = "my.global-settings")
 public class GlobalSettings {
 
 	/**

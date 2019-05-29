@@ -2,8 +2,8 @@ package org.john.springbootcodegenerator.jdbc;
 
 import java.util.List;
 
-import org.john.springbootcodegenerator.bean.DatasourceSettings;
-import org.john.springbootcodegenerator.bean.TableColumns;
+import org.john.springbootcodegenerator.config.DatasourceSettings;
+import org.john.springbootcodegenerator.entity.TableColumns;
 import org.john.springbootcodegenerator.utils.DataBaseUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

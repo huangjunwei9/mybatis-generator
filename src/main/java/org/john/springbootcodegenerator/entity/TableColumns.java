@@ -1,4 +1,4 @@
-package org.john.springbootcodegenerator.bean;
+package org.john.springbootcodegenerator.entity;
 
 /**
  * 数据表字段

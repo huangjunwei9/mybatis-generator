@@ -2,7 +2,7 @@ package org.john.springbootcodegenerator.service;
 
 import java.util.List;
 
-import org.john.springbootcodegenerator.bean.TableColumns;
+import org.john.springbootcodegenerator.entity.TableColumns;
 
 public interface TableColumnsService {
 
