@@ -19,7 +19,7 @@ public class SpringbootCodeGeneratorApplicationTests {
 	 */
 	@Test
 	public void codeGeneratorTest(){
-		String tableName="t_file",classDescription="文件管理";
+		String tableName="tb_sys_user",classDescription="系统用户管理";
 		codeGenerator.createEntityTemplate(tableName, classDescription);
 		codeGenerator.createDaoTemplate(tableName, classDescription);
 		codeGenerator.createServiceTemplate(tableName, classDescription);

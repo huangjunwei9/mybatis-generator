@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
  * @datatime 2019年5月26日下午7:25:40
  */
 @Component
-@ConfigurationProperties(prefix = "my.extends-settings")
-public class ExtendsSettings {
+@ConfigurationProperties(prefix = "codegenerator.extends")
+public class ExtendsConfig {
 	
 	/**
 	 * 是否需要继承Entity父类

@@ -6,16 +6,12 @@ package org.john.springbootcodegenerator.enums;
  * @datatime 2019年1月17日上午9:49:04
  */
 public enum DataTypeEnums {
-
-	VARCHAR("VARCHAR","String"),
-	CHAR("CHAR","String"),
-	LONGVARCHAR("LONGVARCHAR","String"),
-	NUMERIC("NUMERIC","java.math.BigDecimal"),
-	DECIMAL("DECIMAL","java.math.BigDecimal"),
 	
+	VARCHAR("varchar","String"),
+	CHAR("char","String"),
 	BLOB("blob","byte[]"),
 	TEXT("text","String"),
-	INTEGER("integer","Integer"),
+	INTEGER("integer","Long"),
 	TINYINT("tinyint","Integer"),
 	SMALLINT("varchar","Integer"),
 	MEDIUMINT("mediumint","Integer"),
@@ -23,18 +19,16 @@ public enum DataTypeEnums {
 	BIGINT("varchar","BigInteger"),
 	FLOAT("float","Float"),
 	DOUBLE("double","Double"),
-	
+	DECIMAL("decimal","java.math.BigDecimal"),
 	BOOLEAN("varchar","Integer"),
 	DATE("date","Date"),
 	DATETIME("datetime","java.util.Date"),
 	INT("int","int"),
 	TIMESTAMP("timestamp","java.util.Date");
- 	
-	
+
 	private final String mySqlDataType;
 	private final String javaDataType;
 	
-
 	public static String getJavaDataTypeByMysqlDataType(String mySqlDataType) {
 		
 		for (DataTypeEnums e : DataTypeEnums.values()) {

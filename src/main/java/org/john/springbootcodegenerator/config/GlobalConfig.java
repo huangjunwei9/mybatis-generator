@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
  * @datatime 2019年3月3日下午3:54:46
  */
 @Component
-@ConfigurationProperties(prefix = "my.global-settings")
-public class GlobalSettings {
+@ConfigurationProperties(prefix = "codegenerator.global")
+public class GlobalConfig {
 
 	/**
 	 * 作者
@@ -25,15 +25,71 @@ public class GlobalSettings {
 	 * 读取模板总路径
 	 */
 	private String templateBasePath;
+	
+	/**
+	 * 输出文件总路径
+	 */
+	private String writeFileBasePath;
 
 	/**
 	 * 数据库表名前缀
 	 */
 	private String tablePrefix;
 	
+    /**
+     * mybatis mapper namespace 前缀 
+     */
+	private String mapperNamespace;
 	
-	private String writeFileBasePath;
+	/**
+	 * 是否需要 功能模块名称
+	 */
+	private boolean needModel;
+
+	/**
+	 * 功能模块名称
+	 */
+	private String moduleName;
 	
+	
+	/**
+	 * mybatis生成的路径
+	 */
+	
+	private String  mapperPath;
+	
+	public String getMapperNamespace() {
+		return mapperNamespace;
+	}
+
+	public void setMapperNamespace(String mapperNamespace) {
+		this.mapperNamespace = mapperNamespace;
+	}
+
+	public boolean isNeedModel() {
+		return needModel;
+	}
+
+	public void setNeedModel(boolean needModel) {
+		this.needModel = needModel;
+	}
+
+	public String getModuleName() {
+		return moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+	}
+
+	public String getMapperPath() {
+		return mapperPath;
+	}
+
+	public void setMapperPath(String mapperPath) {
+		this.mapperPath = mapperPath;
+	}
+
 	public String getWriteFileBasePath() {
 		return writeFileBasePath;
 	}
