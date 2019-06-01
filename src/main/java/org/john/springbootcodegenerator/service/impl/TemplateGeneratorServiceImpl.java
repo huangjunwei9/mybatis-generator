@@ -210,10 +210,11 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		logger.info(">>>>>开始创建Service<<<<<");
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.service));
 		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-							   .replace("${packgePath}",getPackgePath(TemplateCommon.service));
+							   .replace("${packgePath}",getPackgePath(TemplateCommon.service))
+							   .replace("${entityPackgePath}",getPackgePath(TemplateCommon.entity));
 
 		if (extendsSettings.isExtendsBaseService()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseServicePath());
+			fileName = fileName.replace("${extendsBaseServicePath}", extendsSettings.getBaseServicePath());
 		}
 		logger.info("创建Service文本:" + fileName);
 		fileWrite(TemplateCommon.service,tableName,fileName);
