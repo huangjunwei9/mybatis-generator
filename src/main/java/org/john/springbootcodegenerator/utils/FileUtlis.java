@@ -11,7 +11,10 @@ import java.io.IOException;
 
 import javax.imageio.stream.FileImageInputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
+
 
 /**
  * 文件工具类
@@ -20,6 +23,9 @@ import org.springframework.util.ResourceUtils;
  * @datatime 2018年5月2日下午5:16:49
  */
 public class FileUtlis extends org.apache.commons.io.FileUtils {
+	
+	private static Logger log =LoggerFactory.getLogger(FileUtlis.class);
+	
 	/**
 	 * 生成文件
 	 * 
@@ -33,6 +39,7 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 	 * @datatime 2017年9月12日上午1:30:32
 	 */
 	public static void wirteContent(String path, String pathName, String text) {
+		createDir(path);
 		File file = new File(path, pathName);
 		FileWriter fw = null;
 		BufferedWriter writer = null;
@@ -96,7 +103,7 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 	public static boolean createDir(String destDirName) {
 		File dir = new File(destDirName);
 		if (dir.exists()) {
-			System.out.println("创建目录" + destDirName + "失败，目标目录已经存在");
+			log.info("创建目录" + destDirName + "失败，目标目录已经存在");
 			return false;
 		}
 		if (!destDirName.endsWith(File.separator)) {
@@ -104,10 +111,10 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 		}
 		// 创建目录
 		if (dir.mkdirs()) {
-			System.out.println("创建目录" + destDirName + "成功！");
+			log.info("创建目录" + destDirName + "成功！");
 			return true;
 		} else {
-			System.out.println("创建目录" + destDirName + "失败！");
+			log.info("创建目录" + destDirName + "失败！");
 			return false;
 		}
 	}
@@ -123,11 +130,11 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 	public static boolean createFile(String destFileName) {
 		File file = new File(destFileName);
 		if (file.exists()) {
-			System.out.println("创建单个文件" + destFileName + "失败，目标文件已存在！");
+			log.info("创建单个文件" + destFileName + "失败，目标文件已存在！");
 			return false;
 		}
 		if (destFileName.endsWith(File.separator)) {
-			System.out.println("创建单个文件" + destFileName + "失败，目标文件不能为目录！");
+			log.info("创建单个文件" + destFileName + "失败，目标文件不能为目录！");
 			return false;
 		}
 		return true;

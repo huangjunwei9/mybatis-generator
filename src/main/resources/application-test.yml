@@ -3,31 +3,31 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${codegenerator.datasource.url}
-    username: ${codegenerator.datasource.username}
-    password: ${codegenerator.datasource.password}
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
+    username: root
+    password: 123456
     
 codegenerator:
   #全局配置
   global:
-    #作者
-    author: johnDeng
-    #生成文件的包总路径
+    #作者(可修改)
+    author: JohnDeng
+    #生成文件的包总路径(可修改)
     packge-path: org.john.codebuilder
-    #模板的总路径
+    #模板的总路径(不可修改)
     template-base-path: classpath:template/
-    #生成文件的总路径(绝对路径)
-    write-file-base-path: E:\mayun\spring-boot-code-generator\src\main\resources\write\
-    #数据库表前缀
+    #生成文件的总路径-绝对路径(可修改)
+    write-file-base-path: I:\project\springboot-code-generator\src\main\resources\write\
+    #数据库表前缀(可修改)
     table-prefix: tb_
-    #mybatis mapper namespace 前缀 
+    #mybatis mapper namespace 前缀 (可修改)
     mapper-namespace:
-    #是否需要模块名称
+    #是否需要模块名称(可修改)
     need-model: true 
-    #功能模块名称
+    #功能模块名称(可修改)
     module-name: test
-    #mybatis生成的路径
-    mapper-path: F:\粤通卡项目\互联网综合管理系统\code-generator\src\main\resources\write\mapper
+    #mybatis生成的路径(可修改)
+    mapper-path: I:\project\springboot-code-generator\src\main\resources\write\mapper
     
     
   #继承配置
@@ -57,13 +57,5 @@ codegenerator:
     #继承Controller父类：包+名称，不用写文件后缀
     extends-base-controller-path: com.design.framework.base.controller.BaseController
     
-  #数据库配置
-  datasource:  
-    #mysql url
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
-    #mysql 用户名
-    username: root
-    #mysql 密码
-    password: 
   
   

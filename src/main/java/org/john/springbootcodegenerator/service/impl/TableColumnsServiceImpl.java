@@ -68,11 +68,13 @@ public class TableColumnsServiceImpl implements TableColumnsService {
 			sb.append(DataTypeEnums.getJavaDataTypeByMysqlDataType(dataType));
 			sb.append(" ");
 			sb.append(FormatNameUtlis.formatNameLowerCase(ColumnName));
-			sb.append(") {this.");
+			sb.append(") {\n ");
+			sb.append("    	this.");
 			sb.append(FormatNameUtlis.formatNameLowerCase(ColumnName));
 			sb.append(" = ");
 			sb.append(FormatNameUtlis.formatNameLowerCase(ColumnName));
-			sb.append(";}\n");
+			sb.append(";\n");
+			sb.append("     }\n\n ");
 
 		}
 		return sb.toString();
@@ -86,9 +88,11 @@ public class TableColumnsServiceImpl implements TableColumnsService {
 			sb.append(DataTypeEnums.getJavaDataTypeByMysqlDataType(dataType));
 			sb.append(" get");
 			sb.append(FormatNameUtlis.formatNameCamelbak(ColumnName));
-			sb.append("() { return ");
+			sb.append("() { \n");
+			sb.append("        return ");
 			sb.append(FormatNameUtlis.formatNameLowerCase(ColumnName));
-			sb.append("; }\n");
+			sb.append(";\n");
+			sb.append("     }\n\n ");
 		}
 		return sb.toString();
 	}

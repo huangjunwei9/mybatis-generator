@@ -177,7 +177,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		if (extendsSettings.isExtendsBaseEntity()) {
 			fileName = fileName.replace("${extendBaseEntity}", extendsSettings.getBaseEntityPath());
 		}
-		logger.info("创建实体文本:" + fileName);
+		logger.info("创建实体文本:\n" + fileName);
 		fileWrite(TemplateCommon.entity,tableName,fileName);
 		
 		logger.info(">>>>>结束创建实体<<<<<");
