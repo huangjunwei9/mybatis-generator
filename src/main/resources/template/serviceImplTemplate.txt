@@ -5,10 +5,10 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import ${extendsBasePath}.service.impl.BaseServiceImpl;
-import ${packgePath}.dao.${className}Dao;
-import ${packgePath}.entity.${className};
-import ${packgePath}.service.${className}Service;
+import ${extendsBaseServiceImplPath};
+import ${daoPackgePath}.${className}Dao;
+import ${entityPackgePath}.${className};
+import ${servicePackgePath}.${className}Service;
 /**
  * ${classDescription}
  * @author ${author}

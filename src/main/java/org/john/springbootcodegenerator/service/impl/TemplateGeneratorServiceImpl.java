@@ -229,9 +229,13 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.serviceImpl));
 		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
 				.replace("${lowerClassName}",FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)))
-				.replace("${packgePath}", getPackgePath(TemplateCommon.serviceImpl));
+				.replace("${packgePath}", getPackgePath(TemplateCommon.serviceImpl))
+				.replace("${entityPackgePath}",getPackgePath(TemplateCommon.entity))
+				.replace("${daoPackgePath}",getPackgePath(TemplateCommon.dao))
+				.replace("${servicePackgePath}",getPackgePath(TemplateCommon.service));
+		
 		if (extendsSettings.isExtendsBaseServiceImpl()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseServiceImplPath());
+			fileName = fileName.replace("${extendsBaseServiceImplPath}", extendsSettings.getBaseServiceImplPath());
 		}
 
 		logger.info("创建ServiceImpl文本:" + fileName);
