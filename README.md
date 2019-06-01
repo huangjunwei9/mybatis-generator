@@ -1,7 +1,7 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0601/234241_ce48cb71_928367.png "code-generator.png")
 
 # spring-boot-code-generator
-当前最新版本： 1.0.0
+
 ![输入图片说明](https://img.shields.io/badge/version-1.0-green.svg "在这里输入图片标题")
 
 
