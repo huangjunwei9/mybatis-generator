@@ -24,7 +24,7 @@ public class SpringbootCodeGeneratorApplicationTests {
 		codeGenerator.createDaoTemplate(tableName, classDescription);
 		codeGenerator.createServiceTemplate(tableName, classDescription);
 		codeGenerator.createServiceImplTemplate(tableName, classDescription);
-//		codeGenerator.createControllerTemplate(tableName, classDescription);
+		codeGenerator.createControllerTemplate(tableName, classDescription);
 	}
 	
 }

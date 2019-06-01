@@ -65,7 +65,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		} else if (TemplateCommon.serviceImpl.equals(name)) {
 			return codeGeneratorConfig.getPackgePath() + "." + TemplateCommon.service + "." + TemplateCommon.impl;
 		} else if (TemplateCommon.controller.equals(name)) {
-			return codeGeneratorConfig.getPackgePath() + "." + TemplateCommon.service;
+			return codeGeneratorConfig.getPackgePath() + "." + TemplateCommon.controller;
 		}
 		return "";
 	}
@@ -197,7 +197,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 			fileName = fileName.replace("${extendsBaseDaoPath}", extendsSettings.getBaseDaoPath());
 		}
 
-		logger.info("创建DAO文本:" + fileName);
+		logger.info("创建DAO文本:\n" + fileName);
 		fileWrite(TemplateCommon.dao,tableName,fileName);
 		
 		logger.info(">>>>>结束创建DAO<<<<<");
@@ -216,7 +216,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		if (extendsSettings.isExtendsBaseService()) {
 			fileName = fileName.replace("${extendsBaseServicePath}", extendsSettings.getBaseServicePath());
 		}
-		logger.info("创建Service文本:" + fileName);
+		logger.info("创建Service文本:\n" + fileName);
 		fileWrite(TemplateCommon.service,tableName,fileName);
 		logger.info(">>>>>结束创建Service<<<<<");
 	}
@@ -238,7 +238,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 			fileName = fileName.replace("${extendsBaseServiceImplPath}", extendsSettings.getBaseServiceImplPath());
 		}
 
-		logger.info("创建ServiceImpl文本:" + fileName);
+		logger.info("创建ServiceImpl文本:\n" + fileName);
 		fileWrite(TemplateCommon.serviceImpl,tableName,fileName);
 		logger.info(">>>>>结束创建ServiceImpl<<<<<");
 
@@ -251,13 +251,15 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.controller));
 		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
 				.replace("${packgePath}", getPackgePath(TemplateCommon.controller))
+				.replace("${entityPackgePath}", getPackgePath(TemplateCommon.entity))
+				.replace("${servicePackgePath}", getPackgePath(TemplateCommon.service))
 				.replace("${lowerClassName}",FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
 
 		if (extendsSettings.isExtendsBaseController()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseControllerPath());
+			fileName = fileName.replace("${extendsBaseControllerPath}", extendsSettings.getBaseControllerPath());
 		}
 
-		logger.info("创建控制器文本:" + fileName);
+		logger.info("创建控制器文本:\n" + fileName);
 		fileWrite(TemplateCommon.controller,tableName,fileName);
 		logger.info(">>>>>结束创建controller<<<<<");
 	}
