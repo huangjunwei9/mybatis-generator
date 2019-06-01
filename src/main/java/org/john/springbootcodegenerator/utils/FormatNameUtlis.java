@@ -1,7 +1,6 @@
 package org.john.springbootcodegenerator.utils;
 
 import org.apache.commons.lang3.StringUtils;
-import org.mockito.internal.util.StringUtil;
 
 /**
  * 名称转换工具类
@@ -71,7 +70,7 @@ public class FormatNameUtlis {
 	}
 
 	/**
-	 * 下划线转托福，首字符不大写 测试： sys_user ：sysUser tb_sys_user: tbSysUser
+	 * 下划线转驼峰，首字符不大写 测试： sys_user ：sysUser tb_sys_user: tbSysUser
 	 * 
 	 * @author JohnDeng
 	 * @dateTime 2019年5月30日下午6:11:50
@@ -136,7 +135,7 @@ public class FormatNameUtlis {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(formatNameIndexToUpperCase("javaC"));
+		System.out.println(formatNameLowerCase("name"));
 	}
 	
 }

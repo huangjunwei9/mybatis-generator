@@ -175,7 +175,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 				.replace("${entityData}", tableColumnsService.getEntityData(tableName));
 
 		if (extendsSettings.isExtendsBaseEntity()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getExtendsBaseEntityPath());
+			fileName = fileName.replace("${extendBaseEntity}", extendsSettings.getBaseEntityPath());
 		}
 		logger.info("创建实体文本:" + fileName);
 		fileWrite(TemplateCommon.entity,tableName,fileName);
@@ -193,7 +193,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 							   .replace("${packgePath}",getPackgePath(TemplateCommon.dao));
 
 		if (extendsSettings.isExtendsBaseDao()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getExtendsBaseDaoPath());
+			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseDaoPath());
 		}
 
 		logger.info("创建DAO文本:" + fileName);
@@ -212,7 +212,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 							   .replace("${packgePath}",getPackgePath(TemplateCommon.service));
 
 		if (extendsSettings.isExtendsBaseService()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getExtendsBaseServicePath());
+			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseServicePath());
 		}
 		logger.info("创建Service文本:" + fileName);
 		fileWrite(TemplateCommon.service,tableName,fileName);
@@ -229,7 +229,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 				.replace("${lowerClassName}",FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)))
 				.replace("${packgePath}", getPackgePath(TemplateCommon.serviceImpl));
 		if (extendsSettings.isExtendsBaseServiceImpl()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getExtendsBaseServiceImplPath());
+			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseServiceImplPath());
 		}
 
 		logger.info("创建ServiceImpl文本:" + fileName);
@@ -248,7 +248,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 				.replace("${lowerClassName}",FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
 
 		if (extendsSettings.isExtendsBaseController()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getExtendsBaseControllerPath());
+			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseControllerPath());
 		}
 
 		logger.info("创建控制器文本:" + fileName);

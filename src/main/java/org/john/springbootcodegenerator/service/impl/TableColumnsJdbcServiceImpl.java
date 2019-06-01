@@ -38,7 +38,7 @@ public class TableColumnsJdbcServiceImpl  implements TableColumnsJdbcService{
 				+ " CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent "
 				+ " FROM information_schema.columns WHERE table_schema = '"
 				+ DataBaseUtils.getDatabaseName(datasourceSettings.getUrl()) + "'  AND table_name = '" + tableName + "' ";
-		logger.debug("jdbc getListByTable:"+sql);
+		logger.info("jdbc getListByTable sql:"+sql);
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<TableColumns>(TableColumns.class));
 	}
 

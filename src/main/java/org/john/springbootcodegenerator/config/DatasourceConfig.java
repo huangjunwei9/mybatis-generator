@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @datatime 2019年5月26日下午7:28:27
  */
 @Component
-@ConfigurationProperties(prefix = "codegenerator.datasource")
+@ConfigurationProperties(prefix = "spring.datasource")
 public class DatasourceConfig {
 
 	private String url;

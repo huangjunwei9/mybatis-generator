@@ -40,23 +40,23 @@ public class ExtendsConfig {
 	/**
 	 * 继承Entity父类路径
 	 */
-	private String extendsBaseEntityPath;
+	private String baseEntityPath;
 	/**
 	 * 继承Dao父类路径
 	 */
-	private String extendsBaseDaoPath;
+	private String baseDaoPath;
 	/**
 	 * 继承Service父类路径
 	 */
-	private String extendsBaseServicePath;
+	private String baseServicePath;
 	/**
 	 * 继承ServiceImpl父类路径
 	 */
-	private String extendsBaseServiceImplPath;
+	private String baseServiceImplPath;
 	/**
 	 * 继承Controller父类路径
 	 */
-	private String extendsBaseControllerPath;
+	private String baseControllerPath;
 
 	public boolean isExtendsBaseEntity() {
 		return extendsBaseEntity;
@@ -98,44 +98,46 @@ public class ExtendsConfig {
 		this.extendsBaseController = extendsBaseController;
 	}
 
-	public String getExtendsBaseEntityPath() {
-		return extendsBaseEntityPath;
+	public String getBaseEntityPath() {
+		return baseEntityPath;
 	}
 
-	public void setExtendsBaseEntityPath(String extendsBaseEntityPath) {
-		this.extendsBaseEntityPath = extendsBaseEntityPath;
+	public void setBaseEntityPath(String baseEntityPath) {
+		this.baseEntityPath = baseEntityPath;
 	}
 
-	public String getExtendsBaseDaoPath() {
-		return extendsBaseDaoPath;
+	public String getBaseDaoPath() {
+		return baseDaoPath;
 	}
 
-	public void setExtendsBaseDaoPath(String extendsBaseDaoPath) {
-		this.extendsBaseDaoPath = extendsBaseDaoPath;
+	public void setBaseDaoPath(String baseDaoPath) {
+		this.baseDaoPath = baseDaoPath;
 	}
 
-	public String getExtendsBaseServicePath() {
-		return extendsBaseServicePath;
+	public String getBaseServicePath() {
+		return baseServicePath;
 	}
 
-	public void setExtendsBaseServicePath(String extendsBaseServicePath) {
-		this.extendsBaseServicePath = extendsBaseServicePath;
+	public void setBaseServicePath(String baseServicePath) {
+		this.baseServicePath = baseServicePath;
 	}
 
-	public String getExtendsBaseServiceImplPath() {
-		return extendsBaseServiceImplPath;
+	public String getBaseServiceImplPath() {
+		return baseServiceImplPath;
 	}
 
-	public void setExtendsBaseServiceImplPath(String extendsBaseServiceImplPath) {
-		this.extendsBaseServiceImplPath = extendsBaseServiceImplPath;
+	public void setBaseServiceImplPath(String baseServiceImplPath) {
+		this.baseServiceImplPath = baseServiceImplPath;
 	}
 
-	public String getExtendsBaseControllerPath() {
-		return extendsBaseControllerPath;
+	public String getBaseControllerPath() {
+		return baseControllerPath;
 	}
 
-	public void setExtendsBaseControllerPath(String extendsBaseControllerPath) {
-		this.extendsBaseControllerPath = extendsBaseControllerPath;
+	public void setBaseControllerPath(String baseControllerPath) {
+		this.baseControllerPath = baseControllerPath;
 	}
+
+	
 
 }

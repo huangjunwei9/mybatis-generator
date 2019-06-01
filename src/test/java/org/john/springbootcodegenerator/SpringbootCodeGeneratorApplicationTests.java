@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes=SpringbootCodeGeneratorApplication.class)
 public class SpringbootCodeGeneratorApplicationTests {
 	@Autowired
 	public TemplateGeneratorService codeGenerator;
@@ -21,10 +21,10 @@ public class SpringbootCodeGeneratorApplicationTests {
 	public void codeGeneratorTest(){
 		String tableName="tb_sys_user",classDescription="系统用户管理";
 		codeGenerator.createEntityTemplate(tableName, classDescription);
-		codeGenerator.createDaoTemplate(tableName, classDescription);
-		codeGenerator.createServiceTemplate(tableName, classDescription);
-		codeGenerator.createServiceImplTemplate(tableName, classDescription);
-		codeGenerator.createControllerTemplate(tableName, classDescription);
+//		codeGenerator.createDaoTemplate(tableName, classDescription);
+//		codeGenerator.createServiceTemplate(tableName, classDescription);
+//		codeGenerator.createServiceImplTemplate(tableName, classDescription);
+//		codeGenerator.createControllerTemplate(tableName, classDescription);
 	}
 	
 }

@@ -135,10 +135,10 @@ public class TableColumnsServiceImpl implements TableColumnsService {
 	@Override
 	public String getPropertyComments(String comments) {
 		StringBuffer sb = new StringBuffer();
-		sb.append("/**\n");
-		sb.append("*");
-		sb.append(comments + "\n");
-		sb.append("*/\n");
+		sb.append("    /**\n");
+		sb.append("     *");
+		sb.append("     "+comments + "\n");
+		sb.append("     */\n");
 		return sb.toString();
 	}
 

@@ -1,0 +1,62 @@
+server:
+  port: 10000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.88.1.80:3306/unitoll_internet_cms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
+    username: root
+    password: hgrica1@
+    
+codegenerator:
+  #全局配置
+  global:
+    #作者
+    author: johnDeng
+    #生成文件的包总路径
+    packge-path: org.john.codebuilder
+    #模板的总路径
+    template-base-path: classpath:template/
+    #生成文件的总路径(绝对路径)
+    write-file-base-path: F:\代码生成器\src\main\resources\write\
+    #数据库表前缀
+    table-prefix: tb_
+    #mybatis mapper namespace 前缀 
+    mapper-namespace:
+    #是否需要模块名称
+    need-model: true 
+    #功能模块名称
+    module-name: test
+    #mybatis生成的路径
+    mapper-path: F:\代码生成器\src\main\resources\write\mapper
+    
+    
+  #继承配置
+  extends:
+    #需要继承Entity父类
+    extends-base-entity: true
+    #继承Entity父类：包+名称，不用写文件后缀
+    base-entity-path:  com.design.framework.base.controller.BaseEntity
+    
+    #需要继承DAO父类
+    extends-base-dao: true
+    #继承DAO父类：包+名称，不用写文件后缀
+    base-dao-path: com.design.framework.base.dao.BaseDao
+    
+    #需要继承Service父类
+    extends-base-service: true
+    #继承Service父类：包+名称，不用写文件后缀
+    base-service-path: com.design.framework.base.service.BaseService
+    
+    #需要继承ServiceImpl父类
+    extends-base-service-impl: true
+    #继承ServiceImpl父类：包+名称，不用写文件后缀
+    extends-base-service-impl-path: com.design.framework.base.service.impl.BaseServiceImpl
+     
+    #需要继承Controller父类
+    extends-base-controller: true
+    #继承Controller父类：包+名称，不用写文件后缀
+    extends-base-controller-path: com.design.framework.base.controller.BaseController
+    
+
+
+  
