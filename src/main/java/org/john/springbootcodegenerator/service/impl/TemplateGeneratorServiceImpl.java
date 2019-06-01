@@ -175,7 +175,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 				.replace("${entityData}", tableColumnsService.getEntityData(tableName));
 
 		if (extendsSettings.isExtendsBaseEntity()) {
-			fileName = fileName.replace("${extendBaseEntity}", extendsSettings.getBaseEntityPath());
+			fileName = fileName.replace("${extendBaseEntityPath}", extendsSettings.getBaseEntityPath());
 		}
 		logger.info("创建实体文本:\n" + fileName);
 		fileWrite(TemplateCommon.entity,tableName,fileName);
@@ -190,10 +190,11 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.dao));
 		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-							   .replace("${packgePath}",getPackgePath(TemplateCommon.dao));
+							   .replace("${packgePath}",getPackgePath(TemplateCommon.dao))
+							   .replace("${entityPackgePath}",getPackgePath(TemplateCommon.entity));
 
 		if (extendsSettings.isExtendsBaseDao()) {
-			fileName = fileName.replace("${extendsBasePath}", extendsSettings.getBaseDaoPath());
+			fileName = fileName.replace("${extendsBaseDaoPath}", extendsSettings.getBaseDaoPath());
 		}
 
 		logger.info("创建DAO文本:" + fileName);

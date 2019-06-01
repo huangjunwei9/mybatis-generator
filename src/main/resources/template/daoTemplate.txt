@@ -1,7 +1,7 @@
 package ${packgePath};
 
-import ${extendsBasePath}.dao.BaseDao;
-import ${packgePath}.entity.${className};
+import ${extendsBaseDaoPath};
+import ${entityPackgePath}.${className};
 import org.apache.ibatis.annotations.Mapper;
 
 /**

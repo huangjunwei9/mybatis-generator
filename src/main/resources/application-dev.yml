@@ -50,12 +50,12 @@ codegenerator:
     #需要继承ServiceImpl父类
     extends-base-service-impl: true
     #继承ServiceImpl父类：包+名称，不用写文件后缀
-    extends-base-service-impl-path: com.design.framework.base.service.impl.BaseServiceImpl
+    service-impl-path: com.design.framework.base.service.impl.BaseServiceImpl
      
     #需要继承Controller父类
     extends-base-controller: true
     #继承Controller父类：包+名称，不用写文件后缀
-    extends-base-controller-path: com.design.framework.base.controller.BaseController
+    base-controller-path: com.design.framework.base.controller.BaseController
     
 
 
