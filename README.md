@@ -2,7 +2,8 @@
 
 # spring-boot-code-generator
 当前最新版本： 1.0.0
-[version-1.0](https://img.shields.io/badge/version-1.0-green.svg)
+![输入图片说明](https://img.shields.io/badge/version-1.0-green.svg "在这里输入图片标题")
+
 
 #### 背景
 由于每次开发后台管理模块的时候，发现都是做的事情都是一样的，做的逻辑都是一样的，只是业务不一样而已，并且在创建文件很浪费的时间，所以决定自己写一个模板代码生成器，方便项目开发，节省更多的时间写逻辑，减少bug的发生和规范的代码编写及结构
