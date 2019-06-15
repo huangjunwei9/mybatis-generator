@@ -118,6 +118,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 
 	/**
 	 * 获取生成文件名+后缀
+	 * 
 	 * @author JohnDeng
 	 * @dateTime 2019年5月30日下午5:35:15
 	 * @param name
@@ -141,23 +142,29 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 
 	/**
 	 * 生成文件
+	 * 
 	 * @author JohnDeng
 	 * @datatime 2019年5月26日下午11:24:40
 	 * @param name
 	 * @param tableName
 	 * @param fileName
 	 */
-	private void fileWrite(String name,String tableName, String fileName) {
+	private void fileWrite(String name, String tableName, String fileName) {
 		if (TemplateCommon.entity.equals(name)) {
-			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.entity),getWriteFileName(TemplateCommon.entity, tableName), fileName);
+			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.entity),
+					getWriteFileName(TemplateCommon.entity, tableName), fileName);
 		} else if (TemplateCommon.dao.equals(name)) {
-			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.dao),getWriteFileName(TemplateCommon.dao, tableName), fileName);
+			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.dao),
+					getWriteFileName(TemplateCommon.dao, tableName), fileName);
 		} else if (TemplateCommon.service.equals(name)) {
-			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.service),getWriteFileName(TemplateCommon.service, tableName), fileName);
+			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.service),
+					getWriteFileName(TemplateCommon.service, tableName), fileName);
 		} else if (TemplateCommon.serviceImpl.equals(name)) {
-			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.serviceImpl),getWriteFileName(TemplateCommon.serviceImpl, tableName), fileName);
+			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.serviceImpl),
+					getWriteFileName(TemplateCommon.serviceImpl, tableName), fileName);
 		} else if (TemplateCommon.controller.equals(name)) {
-			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.controller),getWriteFileName(TemplateCommon.controller, tableName), fileName);
+			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.controller),
+					getWriteFileName(TemplateCommon.controller, tableName), fileName);
 		}
 
 	}
@@ -165,81 +172,81 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	@Override
 	public void createEntityTemplate(String tableName, String classDescription) {
 		logger.info(">>>>>开始创建实体<<<<<");
-		
-		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.entity));
-		
-		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-				.replace("${packgePath}", getPackgePath(TemplateCommon.entity))
-				.replace("${alias}", tableColumnsService.getAliasName(tableName))
-				.replace("${table}", tableName)
-				.replace("${entityData}", tableColumnsService.getEntityData(tableName));
 
-		if (extendsSettings.isExtendsBaseEntity()) {
-			fileName = fileName.replace("${extendBaseEntityPath}", extendsSettings.getBaseEntityPath());
-		}
+		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.entity));
+
+		Map<String, Object> map = replaceMap(tableName, classDescription);
+		map.put("packgePath", getPackgePath(TemplateCommon.entity));
+		map.put("alias", tableColumnsService.getAliasName(tableName));
+		map.put("table", tableName);
+		map.put("entityData", tableColumnsService.getEntityData(tableName));
+		if (extendsSettings.isExtendsBaseEntity())
+			map.put("extendBaseEntityPath", extendsSettings.getBaseEntityPath());
+
+		fileName = ReplaceUtlis.replace(fileName, map);
+
 		logger.info("创建实体文本:\n" + fileName);
-		fileWrite(TemplateCommon.entity,tableName,fileName);
-		
+		fileWrite(TemplateCommon.entity, tableName, fileName);
 		logger.info(">>>>>结束创建实体<<<<<");
 	}
 
 	@Override
 	public void createDaoTemplate(String tableName, String classDescription) {
-
 		logger.info(">>>>>开始创建DAO<<<<<");
 		
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.dao));
-		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-							   .replace("${packgePath}",getPackgePath(TemplateCommon.dao))
-							   .replace("${entityPackgePath}",getPackgePath(TemplateCommon.entity));
 
-		if (extendsSettings.isExtendsBaseDao()) {
-			fileName = fileName.replace("${extendsBaseDaoPath}", extendsSettings.getBaseDaoPath());
-		}
+		Map<String, Object> map = replaceMap(tableName, classDescription);
+		map.put("packgePath", getPackgePath(TemplateCommon.dao));
+		map.put("entityPackgePath", getPackgePath(TemplateCommon.entity));
+		if (extendsSettings.isExtendsBaseDao())
+			map.put("extendsBaseDaoPath", extendsSettings.getBaseDaoPath());
 
-		logger.info("创建DAO文本:\n" + fileName);
-		fileWrite(TemplateCommon.dao,tableName,fileName);
+		fileName = ReplaceUtlis.replace(fileName, map);
 		
+		logger.info("创建DAO文本:\n" + fileName);
+		fileWrite(TemplateCommon.dao, tableName, fileName);
 		logger.info(">>>>>结束创建DAO<<<<<");
 
 	}
 
 	@Override
 	public void createServiceTemplate(String tableName, String classDescription) {
-
 		logger.info(">>>>>开始创建Service<<<<<");
+		
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.service));
-		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-							   .replace("${packgePath}",getPackgePath(TemplateCommon.service))
-							   .replace("${entityPackgePath}",getPackgePath(TemplateCommon.entity));
-
-		if (extendsSettings.isExtendsBaseService()) {
-			fileName = fileName.replace("${extendsBaseServicePath}", extendsSettings.getBaseServicePath());
-		}
+		
+		Map<String, Object> map = replaceMap(tableName, classDescription);
+		map.put("packgePath", getPackgePath(TemplateCommon.service));
+		map.put("entityPackgePath", getPackgePath(TemplateCommon.entity));
+		if (extendsSettings.isExtendsBaseService()) 
+			map.put("extendsBaseServicePath", extendsSettings.getBaseServicePath());
+		
+		fileName = ReplaceUtlis.replace(fileName, map);
+		
 		logger.info("创建Service文本:\n" + fileName);
-		fileWrite(TemplateCommon.service,tableName,fileName);
+		fileWrite(TemplateCommon.service, tableName, fileName);
 		logger.info(">>>>>结束创建Service<<<<<");
 	}
 
 	@Override
 	public void createServiceImplTemplate(String tableName, String classDescription) {
-
 		logger.info(">>>>>开始创建ServiceImpl<<<<<");
-		
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.serviceImpl));
-		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-				.replace("${lowerClassName}",FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)))
-				.replace("${packgePath}", getPackgePath(TemplateCommon.serviceImpl))
-				.replace("${entityPackgePath}",getPackgePath(TemplateCommon.entity))
-				.replace("${daoPackgePath}",getPackgePath(TemplateCommon.dao))
-				.replace("${servicePackgePath}",getPackgePath(TemplateCommon.service));
 		
-		if (extendsSettings.isExtendsBaseServiceImpl()) {
-			fileName = fileName.replace("${extendsBaseServiceImplPath}", extendsSettings.getBaseServiceImplPath());
-		}
+		Map<String, Object> map = replaceMap(tableName, classDescription);
+		map.put("lowerClassName", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+		map.put("packgePath",getPackgePath(TemplateCommon.serviceImpl));
+		map.put("entityPackgePath",getPackgePath(TemplateCommon.entity));
+		map.put("daoPackgePath",getPackgePath(TemplateCommon.dao));
+		map.put("servicePackgePath",getPackgePath(TemplateCommon.service));
+		if (extendsSettings.isExtendsBaseServiceImpl()) 
+			map.put("extendsBaseServiceImplPath", extendsSettings.getBaseServiceImplPath());
+
+		fileName = ReplaceUtlis.replace(fileName, map);
 
 		logger.info("创建ServiceImpl文本:\n" + fileName);
-		fileWrite(TemplateCommon.serviceImpl,tableName,fileName);
+		fileWrite(TemplateCommon.serviceImpl, tableName, fileName);
 		logger.info(">>>>>结束创建ServiceImpl<<<<<");
 
 	}
@@ -247,20 +254,20 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	@Override
 	public void createControllerTemplate(String tableName, String classDescription) {
 		logger.info(">>>>>开始创建controller<<<<<");
-
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.controller));
-		fileName = ReplaceUtlis.replace(fileName, replaceMap(tableName, classDescription))
-				.replace("${packgePath}", getPackgePath(TemplateCommon.controller))
-				.replace("${entityPackgePath}", getPackgePath(TemplateCommon.entity))
-				.replace("${servicePackgePath}", getPackgePath(TemplateCommon.service))
-				.replace("${lowerClassName}",FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+		
+		Map<String, Object> map = replaceMap(tableName, classDescription);
+		map.put("packgePath", getPackgePath(TemplateCommon.controller));
+		map.put("entityPackgePath", getPackgePath(TemplateCommon.entity));
+		map.put("servicePackgePath", getPackgePath(TemplateCommon.service));
+		map.put("lowerClassName", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+		if (extendsSettings.isExtendsBaseController()) 
+			map.put("extendsBaseControllerPath", extendsSettings.getBaseControllerPath());
 
-		if (extendsSettings.isExtendsBaseController()) {
-			fileName = fileName.replace("${extendsBaseControllerPath}", extendsSettings.getBaseControllerPath());
-		}
+		fileName = ReplaceUtlis.replace(fileName, map);
 
 		logger.info("创建控制器文本:\n" + fileName);
-		fileWrite(TemplateCommon.controller,tableName,fileName);
+		fileWrite(TemplateCommon.controller, tableName, fileName);
 		logger.info(">>>>>结束创建controller<<<<<");
 	}
 
