@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.john.springbootcodegenerator.common.TemplateCommon;
 import org.john.springbootcodegenerator.config.ExtendsConfig;
 import org.john.springbootcodegenerator.config.GlobalConfig;
+import org.john.springbootcodegenerator.service.MyBatisMapperService;
 import org.john.springbootcodegenerator.service.TableColumnsService;
 import org.john.springbootcodegenerator.service.TemplateGeneratorService;
 import org.john.springbootcodegenerator.utils.DateTimeUtils;
@@ -27,7 +28,8 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	private GlobalConfig codeGeneratorConfig;
 	@Resource
 	private ExtendsConfig extendsSettings;
-
+	@Resource
+	private MyBatisMapperService myBatisMapperService;
 	/**
 	 * 通用的替换
 	 * 
@@ -269,6 +271,27 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		logger.info("创建控制器文本:\n" + fileName);
 		fileWrite(TemplateCommon.controller, tableName, fileName);
 		logger.info(">>>>>结束创建controller<<<<<");
+	}
+
+	@Override
+	public void createMapperTeplate(String tableName, String classDescription) {
+		
+//		logger.info(">>>>>开始创建Mapper<<<<<");
+//		String templateMapperString = FileUtlis.readFileText(pathConfig.getTemplateMapperFileName());
+//		templateMapperString=templateMapperString.replace("${tableName}", tableName);
+//		templateMapperString=templateMapperString.replace("${className}", tableColumnsService.getClassName(tableName));
+//		templateMapperString=templateMapperString.replace("${mapperNamespace}", codeGeneratorConfig.getPackgePath("dao"));
+//		templateMapperString=templateMapperString.replace("${alias}", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+//		templateMapperString=templateMapperString.replace("${Columms}", myBatisMapperService.getMapperColumns(tableName));
+//		templateMapperString=templateMapperString.replace("${insertColumms}", myBatisMapperService.getInsertColums(tableName));
+//		templateMapperString=templateMapperString.replace("${insertBatchValues}", myBatisMapperService.getInsertBatchValue(tableName));
+//		templateMapperString=templateMapperString.replace("${insertValues}", myBatisMapperService.getInsertValues(tableName));
+//		templateMapperString=templateMapperString.replace("${updateColumms}", myBatisMapperService.getUpdateColumms(tableName));
+//		
+//		logger.info("templateMapperString:" + templateMapperString);
+//		FileUtlis.wirteContent(pathConfig.getWriteMapperFilePath(),tableColumnsService.getClassName(tableName) + "Dao.xml", templateMapperString);
+//		logger.info(">>>>>结束创建Mapper<<<<<");
+		
 	}
 
 }

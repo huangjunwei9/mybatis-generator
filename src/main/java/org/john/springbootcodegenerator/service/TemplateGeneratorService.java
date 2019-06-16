@@ -46,4 +46,13 @@ public interface TemplateGeneratorService {
 	 */
 	public void createControllerTemplate(String tableName, String classDescription);
 	
+	/**
+	 * 创建mybaits-mapper模板
+	 * @author johnDeng
+	 * @dataTime 2019年3月13日下午6:31:11
+	 * @param tableName
+	 * @param classDescription
+	 */
+	public void createMapperTeplate(String tableName, String classDescription);
+	
 }
