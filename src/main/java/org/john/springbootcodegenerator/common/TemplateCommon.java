@@ -17,6 +17,9 @@ public class TemplateCommon {
 	public static String serviceImplTemplateFileName = "serviceImplTemplate.txt";
 
 	public static String controllerTemplateFileName = "controllerTemplate.txt";
+	
+	public static String mapperTemplateFileName = "mapperTemplate.xml";
+
 
 	public static String javaSuffix = ".java";
 
@@ -27,6 +30,8 @@ public class TemplateCommon {
 	public static String javaServiceImplSuffix = "ServiceImpl.java";
 
 	public static String javaControllerImplSuffix = "Controller.java";
+	
+	public static String xmlMapperImplSuffix = "Mapper.xml";
 
 	
 	public static String entity = "entity";
@@ -40,6 +45,8 @@ public class TemplateCommon {
 	public static String impl ="impl";
 
 	public static String controller = "controller";
+	
+	public static String mapper = "mapper";
 	
 	
 

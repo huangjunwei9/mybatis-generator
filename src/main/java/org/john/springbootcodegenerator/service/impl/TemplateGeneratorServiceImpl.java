@@ -30,6 +30,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	private ExtendsConfig extendsSettings;
 	@Resource
 	private MyBatisMapperService myBatisMapperService;
+
 	/**
 	 * 通用的替换
 	 * 
@@ -91,6 +92,8 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 			return codeGeneratorConfig.getTemplateBasePath() + TemplateCommon.serviceImplTemplateFileName;
 		} else if (TemplateCommon.controller.equals(name)) {
 			return codeGeneratorConfig.getTemplateBasePath() + TemplateCommon.controllerTemplateFileName;
+		} else if (TemplateCommon.mapper.equals(name)) {
+			return codeGeneratorConfig.getTemplateBasePath() + TemplateCommon.mapperTemplateFileName;
 		}
 		return "";
 	}
@@ -114,6 +117,8 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 			return codeGeneratorConfig.getWriteFileBasePath() + TemplateCommon.service + "\\" + TemplateCommon.impl;
 		} else if (TemplateCommon.controller.equals(name)) {
 			return codeGeneratorConfig.getWriteFileBasePath() + TemplateCommon.controller;
+		}else if (TemplateCommon.mapper.equals(name)) {
+			return codeGeneratorConfig.getMapperPath() + TemplateCommon.mapper;
 		}
 		return "";
 	}
@@ -138,6 +143,8 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 			return tableColumnsService.getClassName(tableName) + TemplateCommon.javaServiceImplSuffix;
 		} else if (TemplateCommon.controller.equals(name)) {
 			return tableColumnsService.getClassName(tableName) + TemplateCommon.javaControllerImplSuffix;
+		}else if (TemplateCommon.mapper.equals(name)) {
+			return tableColumnsService.getClassName(tableName) + TemplateCommon.xmlMapperImplSuffix;
 		}
 		return "";
 	}
@@ -167,6 +174,9 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 		} else if (TemplateCommon.controller.equals(name)) {
 			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.controller),
 					getWriteFileName(TemplateCommon.controller, tableName), fileName);
+		}else if (TemplateCommon.mapper.equals(name)) {
+			FileUtlis.wirteContent(getWriteFilePath(TemplateCommon.mapper),
+					getWriteFileName(TemplateCommon.mapper, tableName), fileName);
 		}
 
 	}
@@ -195,7 +205,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	@Override
 	public void createDaoTemplate(String tableName, String classDescription) {
 		logger.info(">>>>>开始创建DAO<<<<<");
-		
+
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.dao));
 
 		Map<String, Object> map = replaceMap(tableName, classDescription);
@@ -205,7 +215,7 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 			map.put("extendsBaseDaoPath", extendsSettings.getBaseDaoPath());
 
 		fileName = ReplaceUtlis.replace(fileName, map);
-		
+
 		logger.info("创建DAO文本:\n" + fileName);
 		fileWrite(TemplateCommon.dao, tableName, fileName);
 		logger.info(">>>>>结束创建DAO<<<<<");
@@ -215,17 +225,17 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	@Override
 	public void createServiceTemplate(String tableName, String classDescription) {
 		logger.info(">>>>>开始创建Service<<<<<");
-		
+
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.service));
-		
+
 		Map<String, Object> map = replaceMap(tableName, classDescription);
 		map.put("packgePath", getPackgePath(TemplateCommon.service));
 		map.put("entityPackgePath", getPackgePath(TemplateCommon.entity));
-		if (extendsSettings.isExtendsBaseService()) 
+		if (extendsSettings.isExtendsBaseService())
 			map.put("extendsBaseServicePath", extendsSettings.getBaseServicePath());
-		
+
 		fileName = ReplaceUtlis.replace(fileName, map);
-		
+
 		logger.info("创建Service文本:\n" + fileName);
 		fileWrite(TemplateCommon.service, tableName, fileName);
 		logger.info(">>>>>结束创建Service<<<<<");
@@ -235,14 +245,14 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	public void createServiceImplTemplate(String tableName, String classDescription) {
 		logger.info(">>>>>开始创建ServiceImpl<<<<<");
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.serviceImpl));
-		
+
 		Map<String, Object> map = replaceMap(tableName, classDescription);
 		map.put("lowerClassName", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
-		map.put("packgePath",getPackgePath(TemplateCommon.serviceImpl));
-		map.put("entityPackgePath",getPackgePath(TemplateCommon.entity));
-		map.put("daoPackgePath",getPackgePath(TemplateCommon.dao));
-		map.put("servicePackgePath",getPackgePath(TemplateCommon.service));
-		if (extendsSettings.isExtendsBaseServiceImpl()) 
+		map.put("packgePath", getPackgePath(TemplateCommon.serviceImpl));
+		map.put("entityPackgePath", getPackgePath(TemplateCommon.entity));
+		map.put("daoPackgePath", getPackgePath(TemplateCommon.dao));
+		map.put("servicePackgePath", getPackgePath(TemplateCommon.service));
+		if (extendsSettings.isExtendsBaseServiceImpl())
 			map.put("extendsBaseServiceImplPath", extendsSettings.getBaseServiceImplPath());
 
 		fileName = ReplaceUtlis.replace(fileName, map);
@@ -257,13 +267,13 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 	public void createControllerTemplate(String tableName, String classDescription) {
 		logger.info(">>>>>开始创建controller<<<<<");
 		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.controller));
-		
+
 		Map<String, Object> map = replaceMap(tableName, classDescription);
 		map.put("packgePath", getPackgePath(TemplateCommon.controller));
 		map.put("entityPackgePath", getPackgePath(TemplateCommon.entity));
 		map.put("servicePackgePath", getPackgePath(TemplateCommon.service));
 		map.put("lowerClassName", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
-		if (extendsSettings.isExtendsBaseController()) 
+		if (extendsSettings.isExtendsBaseController())
 			map.put("extendsBaseControllerPath", extendsSettings.getBaseControllerPath());
 
 		fileName = ReplaceUtlis.replace(fileName, map);
@@ -275,23 +285,26 @@ public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
 
 	@Override
 	public void createMapperTeplate(String tableName, String classDescription) {
+		logger.info(">>>>>开始创建Mapper<<<<<");
+		String fileName = FileUtlis.readFileText(getTemplateFileName(TemplateCommon.mapper));
 		
-//		logger.info(">>>>>开始创建Mapper<<<<<");
-//		String templateMapperString = FileUtlis.readFileText(pathConfig.getTemplateMapperFileName());
-//		templateMapperString=templateMapperString.replace("${tableName}", tableName);
-//		templateMapperString=templateMapperString.replace("${className}", tableColumnsService.getClassName(tableName));
-//		templateMapperString=templateMapperString.replace("${mapperNamespace}", codeGeneratorConfig.getPackgePath("dao"));
-//		templateMapperString=templateMapperString.replace("${alias}", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
-//		templateMapperString=templateMapperString.replace("${Columms}", myBatisMapperService.getMapperColumns(tableName));
-//		templateMapperString=templateMapperString.replace("${insertColumms}", myBatisMapperService.getInsertColums(tableName));
-//		templateMapperString=templateMapperString.replace("${insertBatchValues}", myBatisMapperService.getInsertBatchValue(tableName));
-//		templateMapperString=templateMapperString.replace("${insertValues}", myBatisMapperService.getInsertValues(tableName));
-//		templateMapperString=templateMapperString.replace("${updateColumms}", myBatisMapperService.getUpdateColumms(tableName));
-//		
-//		logger.info("templateMapperString:" + templateMapperString);
-//		FileUtlis.wirteContent(pathConfig.getWriteMapperFilePath(),tableColumnsService.getClassName(tableName) + "Dao.xml", templateMapperString);
-//		logger.info(">>>>>结束创建Mapper<<<<<");
+		Map<String, Object> map = replaceMap(tableName, classDescription);
+		map.put("tableName", tableName);
+		map.put("className", tableColumnsService.getClassName(tableName));
+		map.put("alias", FormatNameUtlis.formatNameLowerCase(tableColumnsService.getClassName(tableName)));
+		map.put("daoPackgePath",  getPackgePath(TemplateCommon.dao));
+		map.put("Columms", myBatisMapperService.getMapperColumns(tableName));
+		map.put("insertColumms", myBatisMapperService.getInsertColums(tableName));
+		map.put("insertBatchValues", myBatisMapperService.getInsertBatchValue(tableName));
+		map.put("insertValues", myBatisMapperService.getInsertValues(tableName));
+		map.put("updateColumms", myBatisMapperService.getUpdateColumms(tableName));
 		
+		fileName = ReplaceUtlis.replace(fileName, map);
+
+		logger.info("创建mybaits文本:\n:" + fileName);
+		fileWrite(TemplateCommon.mapper, tableName, fileName);
+		logger.info(">>>>>结束创建Mapper<<<<<");
+
 	}
 
 }

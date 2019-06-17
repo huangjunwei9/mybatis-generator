@@ -27,7 +27,7 @@ codegenerator:
     #功能模块名称 (可修改)
     module-name: test
     #mybatis生成的路径 (可修改)
-    mapper-path: F:\代码生成器\src\main\resources\write\mapper
+    mapper-path: F:\代码生成器\src\main\resources\write\
     
     
   #继承配置

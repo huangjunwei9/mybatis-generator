@@ -23,11 +23,11 @@ codegenerator:
     #mybatis mapper namespace 前缀 (可修改)
     mapper-namespace:
     #是否需要模块名称(可修改)
-    need-model: true 
+    need-model: false 
     #功能模块名称(可修改)
     module-name: test
     #mybatis生成的路径(可修改)
-    mapper-path: I:\project\springboot-code-generator\src\main\resources\write\mapper
+    mapper-path: I:\project\springboot-code-generator\src\main\resources\write\
     
     
   #继承配置
