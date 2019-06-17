@@ -8,19 +8,35 @@ package org.john.springbootcodegenerator.common;
  */
 public class TemplateCommon {
 
-	public static String entityTemplateFileName = "entityTemplate.txt";
+	public static String entityTemplateFileName = "needExtend\\entityTemplate.txt";
 
-	public static String serviceTemplateFileName = "serviceTemplate.txt";
+	public static String serviceTemplateFileName = "needExtend\\serviceTemplate.txt";
 
-	public static String daoTemplateFileName = "daoTemplate.txt";
+	public static String daoTemplateFileName = "needExtend\\daoTemplate.txt";
 
-	public static String serviceImplTemplateFileName = "serviceImplTemplate.txt";
+	public static String serviceImplTemplateFileName = "needExtend\\serviceImplTemplate.txt";
 
-	public static String controllerTemplateFileName = "controllerTemplate.txt";
+	public static String controllerTemplateFileName = "needExtend\\controllerTemplate.txt";
 	
-	public static String mapperTemplateFileName = "mapperTemplate.xml";
+	public static String mapperTemplateFileName = "needExtend\\mapperTemplate.xml";
 
 
+	public static String defaultEntityTemplateFileName = "default\\entityTemplate.txt";
+
+	public static String defaultServiceTemplateFileName = "default\\serviceTemplate.txt";
+
+	public static String defaultDaoTemplateFileName = "default\\daoTemplate.txt";
+
+	public static String defaultServiceImplTemplateFileName = "default\\serviceImplTemplate.txt";
+
+	public static String defaultControllerTemplateFileName = "default\\controllerTemplate.txt";
+	
+	public static String defaultMapperTemplateFileName = "default\\mapperTemplate.xml";
+	
+	
+	
+	
+	
 	public static String javaSuffix = ".java";
 
 	public static String javaDaoSuffix = "Dao.java";

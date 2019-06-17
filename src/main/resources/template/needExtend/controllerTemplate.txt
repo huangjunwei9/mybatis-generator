@@ -1,0 +1,28 @@
+package ${packgePath};
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import ${entityPackgePath}.${className};
+import ${servicePackgePath}.${className}Service;
+import ${extendsBaseControllerPath};
+
+/**
+ * ${classDescription}
+ * @author ${author}
+ * @datatime ${datatime}
+ */
+@RestController
+@RequestMapping("/pc/${lowerClassName}")
+public class ${className}Controller extends BaseController<${className},${primaryKey}>{
+	
+	@Resource
+	private ${className}Service ${lowerClassName}Service;
+	
+	@PostConstruct
+	public void initialize() {
+		super.setBaseService(${lowerClassName}Service);
+	}
+	
+}

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${daoPackgePath}.${className}Dao">
+	<!-- 实体字段 -->
+	<sql id="${alias}Columms">
+${Columms}
+	</sql>
+
+	<!--根据ID查找实体 -->
+	<select id="findById" resultType="${alias}">
+		SELECT
+		<include refid="${alias}Columms"></include>
+		FROM ${tableName} ${alias}
+		<where>
+			<if test="id!=null and id!=''">
+				AND ${alias}.id=#{id}
+			</if>
+		</where>
+	</select>
+
+	<!--查询所有数据 -->
+	<select id="findAll" resultType="${alias}">
+		SELECT
+		<include refid="${alias}Columms"></include>
+		FROM ${tableName} ${alias}
+		<where>
+			1=1
+		</where>
+	</select>
+
+
+	<!-- 根据实体参数获取实体 -->
+	<select id="get" resultType="${alias}">
+		SELECT
+		<include refid="${alias}Columms"></include>
+		FROM ${tableName} ${alias}
+		<where>
+			1=1
+		</where>
+	</select>
+
+	<!--根据实体获取列表 -->
+	<select id="getList" resultType="${alias}">
+		SELECT
+		<include refid="${alias}Columms"></include>
+		FROM ${tableName} ${alias}
+		<where>
+			1=1
+		</where>
+	</select>
+	
+	<!-- 获取一个map列表  -->
+	<select id="getListMap"  resultType="java.util.HashMap">
+		SELECT
+		<include refid="${alias}Columms"></include>
+		FROM ${tableName} ${alias}
+		<where>
+			1=1
+		</where>
+	</select>
+	
+	
+	<!-- 分页查询 -->
+	<select id="getListByPage" resultType="${alias}">
+		SELECT
+		<include refid="${alias}Columms"></include>
+		FROM ${tableName} ${alias}
+		<include refid="getListByPageWhere"></include>
+		ORDER BY ${orderByName}  ${orderBy}   LIMIT ${pageNo},${pageSize}
+	</select>
+	
+	<!--  分页查询查询条件-->
+	<sql id="getListByPageWhere">
+		<where>
+			1=1
+		</where>
+	</sql>
+	
+	<!--  分页查询获取总数 -->
+	<select id="getTotalCount" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(*) 
+		FROM ${tableName} ${alias} 
+		<include refid="getListByPageWhere"></include>
+	</select>
+
+		<!-- 新增 -->
+	<insert id="insert" >
+		 INSERT INTO ${tableName} (
+${insertColumms}
+		 ) VALUES (
+${insertValues}
+		 )
+	</insert>
+	
+	<!-- 批量新增 -->
+	<insert id="insertBatch">
+		 INSERT INTO ${tableName} (
+${insertColumms}
+		 ) VALUES 
+		  <foreach item="item" collection="list" separator="," >
+		  (
+${insertBatchValues}	
+			)	 	
+		 </foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" >
+		UPDATE ${tableName} ${alias}
+		<set>
+${updateColumms}
+		</set>
+		<where>
+			1=1
+			AND ${alias}.id=#{id}
+		</where>
+	</update>
+	
+	<!-- 根据ID删除 -->
+	<delete id="deleteById" >
+		DELETE FROM ${tableName} WHERE id=#{id}
+	</delete>
+	
+	
+	<!-- 批量删除操作 -->
+	<delete id="deleteBatchById">
+		DELETE FROM ${tableName}  
+		WHERE
+			id IN 
+		<foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+			#{item.id}
+		</foreach>
+	</delete>
+</mapper>

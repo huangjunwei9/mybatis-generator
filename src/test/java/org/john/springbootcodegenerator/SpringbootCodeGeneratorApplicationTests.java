@@ -26,11 +26,11 @@ public class SpringbootCodeGeneratorApplicationTests {
 	public void codeGeneratorTest(){
 //		String tableName="tb_account_user",classDescription="系统用户管理";
 		String tableName="tb_sys_user",classDescription="系统用户管理";
-//		codeGenerator.createEntityTemplate(tableName, classDescription);
-//		codeGenerator.createDaoTemplate(tableName, classDescription);
-//		codeGenerator.createServiceTemplate(tableName, classDescription);
-//		codeGenerator.createServiceImplTemplate(tableName, classDescription);
-//		codeGenerator.createControllerTemplate(tableName, classDescription);
+		codeGenerator.createEntityTemplate(tableName, classDescription);
+		codeGenerator.createDaoTemplate(tableName, classDescription);
+		codeGenerator.createServiceTemplate(tableName, classDescription);
+		codeGenerator.createServiceImplTemplate(tableName, classDescription);
+		codeGenerator.createControllerTemplate(tableName, classDescription);
 		codeGenerator.createMapperTeplate(tableName, classDescription);
 		
 	}

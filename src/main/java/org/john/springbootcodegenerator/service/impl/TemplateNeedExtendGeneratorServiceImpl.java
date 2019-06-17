@@ -19,8 +19,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+/**
+ * 获取继承模板的代码生成器
+ * @author JohnDeng
+ * @dateTime 2019年6月17日下午6:14:22
+ */
 @Service
-public class TemplateGeneratorServiceImpl implements TemplateGeneratorService {
+public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGeneratorService {
+	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Resource
 	private TableColumnsService tableColumnsService;
