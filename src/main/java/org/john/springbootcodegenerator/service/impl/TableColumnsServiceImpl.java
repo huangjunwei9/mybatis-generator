@@ -25,12 +25,14 @@ public class TableColumnsServiceImpl implements TableColumnsService {
 	@Override
 	public String getAliasName(String tableName) {
 		if (StringUtils.isNotEmpty(tableName)) {
-			String s="";
-			String [] splits=tableName.split(jdbcTableConfig.getTablePrefix());
-			for(int i=1;i<splits.length;i++){
-				s+=splits[i];
+			if(StringUtils.isNotEmpty(jdbcTableConfig.getTablePrefix())){
+				String s="";
+				String [] splits=tableName.split(jdbcTableConfig.getTablePrefix());
+				for(int i=1;i<splits.length;i++){
+					s+=splits[i];
+				}
+				return FormatNameUtlis.formatNameLowerCase(s);
 			}
-			return FormatNameUtlis.formatNameLowerCase(s);
 		}
 		return "";
 	}
