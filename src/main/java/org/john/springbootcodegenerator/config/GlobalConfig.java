@@ -36,51 +36,12 @@ public class GlobalConfig {
 	 */
 	private String tablePrefix;
 	
-    /**
-     * mybatis mapper namespace 前缀 
-     */
-	private String mapperNamespace;
-	
-	/**
-	 * 是否需要 功能模块名称
-	 */
-	private boolean needModel;
-
-	/**
-	 * 功能模块名称
-	 */
-	private String moduleName;
-	
-	
 	/**
 	 * mybatis生成的路径
 	 */
 	
 	private String  mapperPath;
 	
-	public String getMapperNamespace() {
-		return mapperNamespace;
-	}
-
-	public void setMapperNamespace(String mapperNamespace) {
-		this.mapperNamespace = mapperNamespace;
-	}
-
-	public boolean isNeedModel() {
-		return needModel;
-	}
-
-	public void setNeedModel(boolean needModel) {
-		this.needModel = needModel;
-	}
-
-	public String getModuleName() {
-		return moduleName;
-	}
-
-	public void setModuleName(String moduleName) {
-		this.moduleName = moduleName;
-	}
 
 	public String getMapperPath() {
 		return mapperPath;

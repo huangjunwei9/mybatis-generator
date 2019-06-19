@@ -1,6 +1,6 @@
 package org.john.springbootcodegenerator;
 
-import org.john.springbootcodegenerator.service.TemplateGeneratorService;
+import org.john.springbootcodegenerator.service.impl.TemplateDefaultGeneratorServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=SpringbootCodeGeneratorApplication.class)
 public class SpringbootCodeGeneratorApplicationTests {
+	
 	@Autowired
-	public TemplateGeneratorService codeGenerator;
+	public TemplateDefaultGeneratorServiceImpl codeGenerator;
+//	@Autowired
+//	public TemplateNeedExtendGeneratorServiceImpl codeGenerator
+	
 	/**
 	 * 
 	 * @author JohnDeng
