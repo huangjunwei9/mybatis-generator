@@ -34,10 +34,10 @@ public class TableColumnsJdbcServiceImpl  implements TableColumnsJdbcService{
 	@Override
 	public List<TableColumns> getListByTable(String tableName) {
 		StringBuffer sql=new StringBuffer();
-		sql.append("SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName,");
-		sql.append("ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType,");
-		sql.append("CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent");
-		sql.append("FROM information_schema.columns WHERE table_schema = '");
+		sql.append(" SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName,");
+		sql.append(" ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType,");
+		sql.append(" CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent");
+		sql.append(" FROM information_schema.columns WHERE table_schema = '");
 		sql.append(DataBaseUtils.getDatabaseName(datasourceSettings.getUrl()));
 		sql.append("' AND table_name = '");
 		sql.append(tableName);
