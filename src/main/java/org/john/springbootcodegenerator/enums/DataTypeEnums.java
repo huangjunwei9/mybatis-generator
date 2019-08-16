@@ -7,8 +7,8 @@ package org.john.springbootcodegenerator.enums;
  */
 public enum DataTypeEnums {
 	
-	VARCHAR("varchar","String"),
 	CHAR("char","String"),
+	VARCHAR("varchar","String"),
 	BLOB("blob","byte[]"),
 	TEXT("text","String"),
 	INTEGER("integer","Long"),
@@ -23,16 +23,15 @@ public enum DataTypeEnums {
 	BOOLEAN("varchar","Integer"),
 	DATE("date","Date"),
 	DATETIME("datetime","java.util.Date"),
-	INT("int","int"),
+	INT("int","Integer"),
 	TIMESTAMP("timestamp","java.util.Date");
 
 	private final String mySqlDataType;
 	private final String javaDataType;
 	
 	public static String getJavaDataTypeByMysqlDataType(String mySqlDataType) {
-		
 		for (DataTypeEnums e : DataTypeEnums.values()) {
-			if (e.getMySqlDataType().contains(mySqlDataType)) {
+			if (e.getMySqlDataType().equals((mySqlDataType))) {
 				return e.getJavaDataType();
 			}
 		}
