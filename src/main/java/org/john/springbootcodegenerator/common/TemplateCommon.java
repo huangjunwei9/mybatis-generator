@@ -8,6 +8,7 @@ package org.john.springbootcodegenerator.common;
  */
 public class TemplateCommon {
 
+	/******************************需要继承模板************************************************/
 	public static String entityTemplateFileName = "needExtend\\entityTemplate.txt";
 
 	public static String serviceTemplateFileName = "needExtend\\serviceTemplate.txt";
@@ -20,7 +21,7 @@ public class TemplateCommon {
 	
 	public static String mapperTemplateFileName = "needExtend\\mapperTemplate.xml";
 
-
+	/******************************默认模板************************************************/
 	public static String defaultEntityTemplateFileName = "default\\entityTemplate.txt";
 
 	public static String defaultServiceTemplateFileName = "default\\serviceTemplate.txt";
@@ -33,9 +34,7 @@ public class TemplateCommon {
 	
 	public static String defaultMapperTemplateFileName = "default\\mapperTemplate.xml";
 	
-	
-	
-	
+	/******************************文件后缀************************************************/
 	
 	public static String javaSuffix = ".java";
 
@@ -49,6 +48,7 @@ public class TemplateCommon {
 	
 	public static String xmlMapperImplSuffix = "Mapper.xml";
 
+	/******************************模块************************************************/
 	
 	public static String entity = "entity";
 
