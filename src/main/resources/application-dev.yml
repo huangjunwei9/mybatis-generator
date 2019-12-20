@@ -3,25 +3,25 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.88.1.80:3306/unitoll_internet_cms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2b8
-    username: root
-    password: hgrica1@
+    url: jdbc:mysql://121.251.254.210:3306/hjwdb?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: hjw
+    password: Hjw2020.
     
 codegenerator:
   #全局配置
   global:
     #作者(可修改)
-    author: JohnDeng
+    author: huangjunwei
     #生成文件的包总路径 (可修改)
     packge-path: org.john.springbootcodegenerator
     #模板的总路径(不可修改)
     template-base-path: classpath:template/
     #生成文件的总路径-绝对路径(可修改)
-    write-file-base-path: F:\代码生成器\src\main\resources\write\
+    write-file-base-path: D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\
     #数据库表前缀(可修改)
     table-prefix: tb_
     #mybatis生成的路径 (可修改)
-    mapper-path: F:\代码生成器\src\main\resources\write\
+    mapper-path: D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\
     
     
   #继承配置

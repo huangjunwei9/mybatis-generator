@@ -12,7 +12,7 @@
 spring-boot-code-generator 是springboot+mybaits+jdbc+mysql的搭建的项目,可以根据表结构自动创建 entity,dao,service,serviceImpl,mapper,controller 6个文件，并且封装了增删改查和分页接口，根据数据库表一键生成代码，节省80%的工作量
 
 #### 环境配置
-1.首先到[ spring-boot-code-generator](https://gitee.com/johndengjiajun_admin/springboot-code-generator)下载项目
+1.首先到[ spring-boot-code-generator](https://github.com/huangjunwei9/mybatis-generator)下载项目
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0619/101143_46045bac_928367.png "下载项目.png")
 
 2.下载成功之后，解压到指定的位置
@@ -37,8 +37,6 @@ spring-boot-code-generator 是springboot+mybaits+jdbc+mysql的搭建的项目,�
 
 
 
-#### 如何交流、反馈、参与贡献？
-    gitee开源：https://gitee.com/johndengjiajun_admin/springboot-code-generator
     
 
 
