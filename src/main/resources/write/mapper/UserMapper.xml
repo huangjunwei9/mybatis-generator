@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.john.springbootcodegenerator.dao.UserDao">
+	<!-- 实体字段 -->
+	<sql id="userColumms">
+
+	</sql>
+
+	<!--根据ID查找实体 -->
+	<select id="findById" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			<if test="id!=null and id!=''">
+				AND user.id=#{id}
+			</if>
+		</where>
+	</select>
+
+	<!--查询�?有数�? -->
+	<select id="findAll" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+
+
+	<!-- 根据实体参数获取实体 -->
+	<select id="get" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+
+	<!--根据实体获取列表 -->
+	<select id="getList" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+	
+	<!-- 获取�?个map列表  -->
+	<select id="getListMap"  resultType="java.util.HashMap">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+	
+	
+	<!-- 分页查询 -->
+	<select id="getListByPage" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<include refid="getListByPageWhere"></include>
+		ORDER BY ${orderByName}  ${orderBy}   LIMIT ${pageNo},${pageSize}
+	</select>
+	
+	<!--  分页查询查询条件-->
+	<sql id="getListByPageWhere">
+		<where>
+			1=1
+		</where>
+	</sql>
+	
+	<!--  分页查询获取总数 -->
+	<select id="getTotalCount" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(*) 
+		FROM tb_user user 
+		<include refid="getListByPageWhere"></include>
+	</select>
+
+		<!-- 新增 -->
+	<insert id="insert" >
+		 INSERT INTO tb_user (
+
+		 ) VALUES (
+
+		 )
+	</insert>
+	
+	<!-- 批量新增 -->
+	<insert id="insertBatch">
+		 INSERT INTO tb_user (
+
+		 ) VALUES 
+		  <foreach item="item" collection="list" separator="," >
+		  (
+	
+			)	 	
+		 </foreach>
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" >
+		UPDATE tb_user user
+		<set>
+
+		</set>
+		<where>
+			1=1
+			AND user.id=#{id}
+		</where>
+	</update>
+	
+	<!-- 根据ID删除 -->
+	<delete id="deleteById" >
+		DELETE FROM tb_user WHERE id=#{id}
+	</delete>
+	
+	
+	<!-- 批量删除操作 -->
+	<delete id="deleteBatchById">
+		DELETE FROM tb_user  
+		WHERE
+			id IN 
+		<foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+			#{item.id}
+		</foreach>
+	</delete>
+</mapper>
+

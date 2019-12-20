@@ -1,0 +1,319 @@
+2019-12-20 17:35:08.273 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.john.springbootcodegenerator.TestDefaultGenerator], using SpringBootContextLoader
+2019-12-20 17:35:08.278 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.john.springbootcodegenerator.TestDefaultGenerator]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-20 17:35:08.461 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-12-20 17:35:08.481 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1fb669c3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49c66ade, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6239aba6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3e6104fc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@12359a82, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68df9280, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@479460a6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7164ca4c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4f3bbf68, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5be46f9d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3f91b517]
+2019-12-20 17:35:09.172 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - Starting TestDefaultGenerator on DESKTOP-MVF7FCF with PID 7172 (started by VULCAN in D:\ideaWorking\upc_shuqi_shixi\mybatis-generator)
+2019-12-20 17:35:09.173 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - The following profiles are active: dev
+2019-12-20 17:35:10.231 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - Started TestDefaultGenerator in 1.634 seconds (JVM running for 3.297)
+2019-12-20 17:35:43.246 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建实体<<<<<
+2019-12-20 17:35:43.263 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'user'
+2019-12-20 17:35:43.268 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-20 17:35:44.291 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-20 17:35:44.370 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-12-20 17:35:44.375 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-12-20 17:35:59.683 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.john.springbootcodegenerator.TestDefaultGenerator], using SpringBootContextLoader
+2019-12-20 17:35:59.689 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.john.springbootcodegenerator.TestDefaultGenerator]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-20 17:35:59.880 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-12-20 17:35:59.902 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1fb669c3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49c66ade, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6239aba6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3e6104fc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@12359a82, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68df9280, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@479460a6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7164ca4c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4f3bbf68, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5be46f9d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3f91b517]
+2019-12-20 17:36:00.273 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - Starting TestDefaultGenerator on DESKTOP-MVF7FCF with PID 2908 (started by VULCAN in D:\ideaWorking\upc_shuqi_shixi\mybatis-generator)
+2019-12-20 17:36:00.274 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - The following profiles are active: dev
+2019-12-20 17:36:01.215 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - Started TestDefaultGenerator in 1.255 seconds (JVM running for 2.463)
+2019-12-20 17:36:25.357 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建实体<<<<<
+2019-12-20 17:39:20.562 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'user'
+2019-12-20 17:39:20.568 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-20 17:39:21.036 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-20 17:39:21.086 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-12-20 17:39:21.091 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-12-20 17:47:28.827 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.john.springbootcodegenerator.TestDefaultGenerator], using SpringBootContextLoader
+2019-12-20 17:47:28.834 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.john.springbootcodegenerator.TestDefaultGenerator]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-20 17:47:29.028 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-12-20 17:47:29.045 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1fb669c3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49c66ade, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6239aba6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3e6104fc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@12359a82, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68df9280, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@479460a6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7164ca4c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4f3bbf68, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5be46f9d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3f91b517]
+2019-12-20 17:47:29.427 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - Starting TestDefaultGenerator on DESKTOP-MVF7FCF with PID 4052 (started by VULCAN in D:\ideaWorking\upc_shuqi_shixi\mybatis-generator)
+2019-12-20 17:47:29.428 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - The following profiles are active: dev
+2019-12-20 17:47:30.403 [main] INFO  o.j.springbootcodegenerator.TestDefaultGenerator - Started TestDefaultGenerator in 1.305 seconds (JVM running for 2.462)
+2019-12-20 17:47:36.260 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建实体<<<<<
+2019-12-20 17:47:40.346 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:47:40.354 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-12-20 17:47:40.859 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-12-20 17:47:40.896 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:47:54.480 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - 创建实体文本:
+package org.john.springbootcodegenerator.entity;
+
+import com.design.framework.base.controller.BaseEntity;
+import org.apache.ibatis.type.Alias;
+import javax.persistence.Table;
+
+/**
+ * 用户
+ * @author huangjunwei
+ * @datatime 2019-12-20 05:47:40
+ */
+@Alias(value = "user")
+@Table(name="tb_user")
+public class User extends BaseEntity<null>{
+	
+	private static final long serialVersionUID = 1L;
+	
+
+	
+
+}
+
+2019-12-20 17:47:54.481 [main] INFO  org.john.springbootcodegenerator.utils.FileUtlis - 创建目录D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\entity\成功！
+2019-12-20 17:47:58.897 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>结束创建实体<<<<<
+2019-12-20 17:48:00.323 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建DAO<<<<<
+2019-12-20 17:48:00.325 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.336 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - 创建DAO文本:
+package org.john.springbootcodegenerator.dao;
+
+import com.design.framework.base.dao.BaseDao;
+import org.john.springbootcodegenerator.entity.User;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * 用户
+ * @author huangjunwei
+ * @datatime 2019-12-20 05:48:00
+ */
+@Mapper
+public interface UserDao extends BaseDao<User,null>{
+	
+}
+
+2019-12-20 17:48:00.337 [main] INFO  org.john.springbootcodegenerator.utils.FileUtlis - 创建目录D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\dao\成功！
+2019-12-20 17:48:00.342 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>结束创建DAO<<<<<
+2019-12-20 17:48:00.342 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建Service<<<<<
+2019-12-20 17:48:00.346 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.351 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - 创建Service文本:
+package org.john.springbootcodegenerator.service;
+
+import com.design.framework.base.service.BaseService;
+import org.john.springbootcodegenerator.entity.User;
+
+/**
+ * 用户
+ * @author huangjunwei
+ * @datatime 2019-12-20 05:48:00
+ */
+public interface UserService extends BaseService<User,null> {
+
+
+}
+
+2019-12-20 17:48:00.351 [main] INFO  org.john.springbootcodegenerator.utils.FileUtlis - 创建目录D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\service\成功！
+2019-12-20 17:48:00.355 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>结束创建Service<<<<<
+2019-12-20 17:48:00.355 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建ServiceImpl<<<<<
+2019-12-20 17:48:00.359 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.365 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - 创建ServiceImpl文本:
+package org.john.springbootcodegenerator.service.impl;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import null;
+import org.john.springbootcodegenerator.dao.UserDao;
+import org.john.springbootcodegenerator.entity.User;
+import org.john.springbootcodegenerator.service.UserService;
+/**
+ * 用户
+ * @author huangjunwei
+ * @datatime 2019-12-20 05:48:00
+ */
+@Service
+public class UserServiceImpl extends BaseServiceImpl<User,null> implements UserService {
+	@Resource
+	private UserDao userDao;
+	
+	@PostConstruct
+	public void initialize(){
+		super.setBaseDao(userDao);
+	}
+	
+}
+
+2019-12-20 17:48:00.366 [main] INFO  org.john.springbootcodegenerator.utils.FileUtlis - 创建目录D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\service\impl\成功！
+2019-12-20 17:48:00.371 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>结束创建ServiceImpl<<<<<
+2019-12-20 17:48:00.371 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建controller<<<<<
+2019-12-20 17:48:00.373 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.379 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - 创建控制器文本:
+package org.john.springbootcodegenerator.controller;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.john.springbootcodegenerator.entity.User;
+import org.john.springbootcodegenerator.service.UserService;
+import com.design.framework.base.controller.BaseController;
+
+/**
+ * 用户
+ * @author huangjunwei
+ * @datatime 2019-12-20 05:48:00
+ */
+@RestController
+@RequestMapping("/pc/user")
+public class UserController extends BaseController<User,null>{
+	
+	@Resource
+	private UserService userService;
+	
+	@PostConstruct
+	public void initialize() {
+		super.setBaseService(userService);
+	}
+	
+}
+
+2019-12-20 17:48:00.380 [main] INFO  org.john.springbootcodegenerator.utils.FileUtlis - 创建目录D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\controller\成功！
+2019-12-20 17:48:00.385 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>结束创建controller<<<<<
+2019-12-20 17:48:00.385 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>开始创建Mapper<<<<<
+2019-12-20 17:48:00.392 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.398 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.408 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.418 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.426 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.431 [main] INFO  o.j.s.service.impl.TableColumnsJdbcServiceImpl - jdbc getListByTable sql: SELECT TABLE_SCHEMA AS tableSchema,TABLE_NAME AS tableName,COLUMN_NAME AS columnName, ORDINAL_POSITION AS ordinalPosition,IS_NULLABLE AS notNullFlag,DATA_TYPE AS dataType, CHARACTER_MAXIMUM_LENGTH AS columnLength,COLUMN_KEY AS  cloumnKey,COLUMN_COMMENT AS cloumnComent FROM information_schema.columns WHERE 1=1 AND table_schema = 'hjwdb' AND table_name = 'tb_user'
+2019-12-20 17:48:00.438 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - 创建mybaits文本:
+:<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.john.springbootcodegenerator.dao.UserDao">
+	<!-- 瀹炰綋瀛楁 -->
+	<sql id="userColumms">
+
+	</sql>
+
+	<!--鏍规嵁ID鏌ユ壘瀹炰綋 -->
+	<select id="findById" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			<if test="id!=null and id!=''">
+				AND user.id=#{id}
+			</if>
+		</where>
+	</select>
+
+	<!--鏌ヨ鎵?鏈夋暟鎹? -->
+	<select id="findAll" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+
+
+	<!-- 鏍规嵁瀹炰綋鍙傛暟鑾峰彇瀹炰綋 -->
+	<select id="get" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+
+	<!--鏍规嵁瀹炰綋鑾峰彇鍒楄〃 -->
+	<select id="getList" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+	
+	<!-- 鑾峰彇涓?涓猰ap鍒楄〃  -->
+	<select id="getListMap"  resultType="java.util.HashMap">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<where>
+			1=1
+		</where>
+	</select>
+	
+	
+	<!-- 鍒嗛〉鏌ヨ -->
+	<select id="getListByPage" resultType="user">
+		SELECT
+		<include refid="userColumms"></include>
+		FROM tb_user user
+		<include refid="getListByPageWhere"></include>
+		ORDER BY ${orderByName}  ${orderBy}   LIMIT ${pageNo},${pageSize}
+	</select>
+	
+	<!--  鍒嗛〉鏌ヨ鏌ヨ鏉′欢-->
+	<sql id="getListByPageWhere">
+		<where>
+			1=1
+		</where>
+	</sql>
+	
+	<!--  鍒嗛〉鏌ヨ鑾峰彇鎬绘暟 -->
+	<select id="getTotalCount" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(*) 
+		FROM tb_user user 
+		<include refid="getListByPageWhere"></include>
+	</select>
+
+		<!-- 鏂板 -->
+	<insert id="insert" >
+		 INSERT INTO tb_user (
+
+		 ) VALUES (
+
+		 )
+	</insert>
+	
+	<!-- 鎵归噺鏂板 -->
+	<insert id="insertBatch">
+		 INSERT INTO tb_user (
+
+		 ) VALUES 
+		  <foreach item="item" collection="list" separator="," >
+		  (
+	
+			)	 	
+		 </foreach>
+	</insert>
+	
+	<!-- 淇敼 -->
+	<update id="update" >
+		UPDATE tb_user user
+		<set>
+
+		</set>
+		<where>
+			1=1
+			AND user.id=#{id}
+		</where>
+	</update>
+	
+	<!-- 鏍规嵁ID鍒犻櫎 -->
+	<delete id="deleteById" >
+		DELETE FROM tb_user WHERE id=#{id}
+	</delete>
+	
+	
+	<!-- 鎵归噺鍒犻櫎鎿嶄綔 -->
+	<delete id="deleteBatchById">
+		DELETE FROM tb_user  
+		WHERE
+			id IN 
+		<foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+			#{item.id}
+		</foreach>
+	</delete>
+</mapper>
+
+2019-12-20 17:48:00.439 [main] INFO  org.john.springbootcodegenerator.utils.FileUtlis - 创建目录D:\ideaWorking\upc_shuqi_shixi\mybatis-generator\src\main\resources\write\mapper\成功！
+2019-12-20 17:48:00.447 [main] INFO  o.j.s.s.i.TemplateNeedExtendGeneratorServiceImpl - >>>>>结束创建Mapper<<<<<
+2019-12-20 17:48:00.455 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-12-20 17:48:00.502 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
