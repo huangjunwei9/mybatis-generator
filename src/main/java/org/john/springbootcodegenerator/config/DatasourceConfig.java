@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * 数据库配置信息
- * @author JohnDeng
  * @datatime 2019年5月26日下午7:28:27
  */
 @Component

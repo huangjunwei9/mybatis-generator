@@ -18,8 +18,7 @@ import org.springframework.util.ResourceUtils;
 
 /**
  * 文件工具类
- * 
- * @author JohnDeng
+ *
  * @datatime 2018年5月2日下午5:16:49
  */
 public class FileUtlis extends org.apache.commons.io.FileUtils {
@@ -35,7 +34,6 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 	 *            文件名
 	 * @param text
 	 *            文件内容
-	 * @author John
 	 * @datatime 2017年9月12日上午1:30:32
 	 */
 	public static void wirteContent(String path, String pathName, String text) {
@@ -67,10 +65,8 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 
 	/**
 	 * 读取文件
-	 * 
-	 * @param modeltype
+	 *
 	 * @return
-	 * @author John
 	 * @datatime 2017年9月25日上午1:34:32
 	 */
 	public static String readFileText(String pathName) {
@@ -97,7 +93,6 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 	 * 
 	 * @param destDirName
 	 * @return
-	 * @author John
 	 * @datatime 2017年10月27日下午5:16:32
 	 */
 	public static boolean createDir(String destDirName) {
@@ -124,7 +119,6 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 	 * 
 	 * @param destFileName
 	 * @return
-	 * @author John
 	 * @datatime 2017年10月27日下午5:37:14
 	 */
 	public static boolean createFile(String destFileName) {
@@ -142,8 +136,7 @@ public class FileUtlis extends org.apache.commons.io.FileUtils {
 
 	/**
 	 * 文件流转二进制流
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2018年3月14日下午4:38:48
 	 * @param file
 	 * @return

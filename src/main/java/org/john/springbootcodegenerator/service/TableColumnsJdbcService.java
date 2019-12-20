@@ -7,7 +7,6 @@ import org.john.springbootcodegenerator.entity.TableColumns;
 
 /**
  * jdbc 表结构 Service
- * @author JohnDeng
  * @dateTime 2019年5月30日下午5:10:04
  */
 public interface TableColumnsJdbcService {

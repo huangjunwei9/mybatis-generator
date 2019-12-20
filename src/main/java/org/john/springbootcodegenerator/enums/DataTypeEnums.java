@@ -2,7 +2,6 @@ package org.john.springbootcodegenerator.enums;
 
 /**
  * 数据类型枚举
- * @author JohnDeng
  * @datatime 2019年1月17日上午9:49:04
  */
 public enum DataTypeEnums {

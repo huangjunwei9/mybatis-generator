@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * 获取继承模板的代码生成器
- * @author JohnDeng
  * @dateTime 2019年6月17日下午6:14:22
  */
 @Service
@@ -39,8 +38,7 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 
 	/**
 	 * 通用的替换
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2019年5月26日下午9:39:17
 	 * @param tableName
 	 * @param classDescription
@@ -58,8 +56,7 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 
 	/**
 	 * 获取包路径
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2019年5月26日下午10:53:38
 	 * @param name
 	 * @return
@@ -81,8 +78,7 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 
 	/**
 	 * 获取模板路径和名称
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2019年5月26日下午11:12:02
 	 * @param name
 	 * @return
@@ -106,8 +102,7 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 
 	/**
 	 * 获取生成路径
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2019年5月26日下午11:12:19
 	 * @param name
 	 * @return
@@ -131,8 +126,7 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 
 	/**
 	 * 获取生成文件名+后缀
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @dateTime 2019年5月30日下午5:35:15
 	 * @param name
 	 * @param tableName
@@ -157,8 +151,7 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 
 	/**
 	 * 生成文件
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2019年5月26日下午11:24:40
 	 * @param name
 	 * @param tableName
@@ -198,9 +191,9 @@ public class TemplateNeedExtendGeneratorServiceImpl implements TemplateGenerator
 		map.put("alias", tableColumnsService.getAliasName(tableName));
 		map.put("table", tableName);
 		map.put("entityData", tableColumnsService.getEntityData(tableName));
-		if (extendsSettings.isExtendsBaseEntity())
+		if (extendsSettings.isExtendsBaseEntity()) {
 			map.put("extendBaseEntityPath", extendsSettings.getBaseEntityPath());
-
+		}
 		fileName = ReplaceUtlis.replace(fileName, map);
 
 		logger.info("创建实体文本:\n" + fileName);

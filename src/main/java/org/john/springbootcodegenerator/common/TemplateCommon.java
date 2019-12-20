@@ -2,8 +2,7 @@ package org.john.springbootcodegenerator.common;
 
 /**
  * 模板名称常量
- * 
- * @author JohnDeng
+ *
  * @datatime 2019年5月25日上午10:06:08
  */
 public class TemplateCommon {

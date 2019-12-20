@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
  * <p>
  * 配置信息详情，看application。yml
  * </p>
- * 
- * @author JohnDeng
+ *
  * @datatime 2019年5月26日下午7:25:40
  */
 @Component

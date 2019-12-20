@@ -25,8 +25,7 @@ public class TableColumnsJdbcServiceImpl  implements TableColumnsJdbcService{
 
 	/**
 	 * 获取表结构
-	 * 
-	 * @author johnDeng
+	 *
 	 * @dataTime 2019年3月5日下午3:51:10
 	 * @param tableName
 	 * @return

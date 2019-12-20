@@ -5,8 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 全局配置
- * 
- * @author JohnDeng
+ *
  * @datatime 2019年3月3日下午3:54:46
  */
 @Component

@@ -2,8 +2,7 @@ package org.john.springbootcodegenerator.entity;
 
 /**
  * 数据表字段
- * 
- * @author JohnDeng
+ *
  * @datatime 2019年1月16日上午9:51:12
  */
 public class TableColumns {

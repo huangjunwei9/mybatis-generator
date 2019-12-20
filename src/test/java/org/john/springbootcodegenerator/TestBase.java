@@ -8,7 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * 测试用例
- * @author JohnDeng
  * @dateTime 2019年6月17日下午4:27:36
  */
 @RunWith(SpringRunner.class)

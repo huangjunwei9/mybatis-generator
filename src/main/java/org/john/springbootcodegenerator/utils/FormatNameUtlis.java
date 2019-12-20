@@ -4,8 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 名称转换工具类
- * 
- * @author JohnDeng
+ *
  * @datatime 2019年1月17日上午9:12:56
  */
 public class FormatNameUtlis {
@@ -16,7 +15,6 @@ public class FormatNameUtlis {
 	 * 测试：
 	 * java : Java
 	 * javaC : JavaC
-	 * @author JohnDeng
 	 * @datatime 2019年1月22日下午2:54:42
 	 * @param ColumnName
 	 * @return
@@ -30,7 +28,6 @@ public class FormatNameUtlis {
 	
 	/**
 	 * 首字符变成小写
-	 * @author JohnDeng
 	 * @datatime 2019年1月22日下午2:54:42
 	 * @param ColumnName
 	 * @return
@@ -45,8 +42,7 @@ public class FormatNameUtlis {
 	
 	/**
 	 * 大写转下滑线（JAVA转MySQL) 测试： Java : _java JavaC: _java_c
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @dateTime 2019年5月30日下午6:09:25
 	 * @param param
 	 * @return
@@ -71,8 +67,7 @@ public class FormatNameUtlis {
 
 	/**
 	 * 下划线转驼峰，首字符不大写 测试： sys_user ：sysUser tb_sys_user: tbSysUser
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @dateTime 2019年5月30日下午6:11:50
 	 * @param param
 	 * @return
@@ -103,7 +98,6 @@ public class FormatNameUtlis {
 	 *
 	 * @param ColumnName
 	 * @return
-	 * @author John
 	 * @datatime 2017年10月30日下午3:14:06
 	 */
 	public static String formatNameCamelbak(String ColumnName) {
@@ -121,7 +115,6 @@ public class FormatNameUtlis {
 	 *
 	 * @param ColumnName
 	 * @return
-	 * @author John
 	 * @datatime 2017年10月31日上午11:08:15
 	 */
 	public static String formatNameLowerCase(String ColumnName) {

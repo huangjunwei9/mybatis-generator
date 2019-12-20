@@ -11,13 +11,12 @@ public class TestDefaultGenerator extends TestBase {
 	
 	/**
 	 * 使用需要继承类生成代码
-	 * @author JohnDeng
 	 * @dateTime 2019年6月19日上午11:26:06
 	 */
 	@Test
 	@Override
 	public void test() {
-		String tableName="tb_sys_user",classDescription="系统用户管理";
+		String tableName="tb_user",classDescription="用户";
 		templateNeedExtendGeneratorServiceImpl.createEntityTemplate(tableName, classDescription);
 		templateNeedExtendGeneratorServiceImpl.createDaoTemplate(tableName, classDescription);
 		templateNeedExtendGeneratorServiceImpl.createServiceTemplate(tableName, classDescription);

@@ -18,7 +18,7 @@ public class TestTableColumnsJdbcService extends TestBase {
 	@Test
 	@Override
 	public void test() {
-		List<TableColumns> list=tableColumnsJdbcService.getListByTable("tb_sys_user");
+		List<TableColumns> list=tableColumnsJdbcService.getListByTable("tb_user");
 		logger.info(JSON.toJSONString(list));
 	}
 

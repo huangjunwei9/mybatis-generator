@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * 获取默认（不继承）的代码生成器
- * @author JohnDeng
  * @dateTime 2019年6月17日下午6:15:06
  */
 @Service
@@ -39,8 +38,7 @@ public class TemplateDefaultGeneratorServiceImpl implements TemplateGeneratorSer
 
 	/**
 	 * 通用的替换
-	 * 
-	 * @author JohnDeng
+	 *
 	 * @datatime 2019年5月26日下午9:39:17
 	 * @param tableName
 	 * @param classDescription

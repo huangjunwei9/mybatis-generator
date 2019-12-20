@@ -5,7 +5,6 @@ public interface MyBatisMapperService {
 
 	/**
 	 * 获取mapper全部列
-	 * @author johnDeng
 	 * @dataTime 2019年3月14日下午2:28:11
 	 * @return
 	 */
@@ -13,7 +12,6 @@ public interface MyBatisMapperService {
 	
 	/**
 	 * 获取新增字段全部列
-	 * @author johnDeng
 	 * @dataTime 2019年3月14日下午5:44:09
 	 * @param tableName
 	 * @return
@@ -22,7 +20,6 @@ public interface MyBatisMapperService {
 	
 	/**
 	 * 获取新增字段全部值
-	 * @author johnDeng
 	 * @dataTime 2019年3月14日下午5:44:09
 	 * @param tableName
 	 * @return
@@ -31,7 +28,6 @@ public interface MyBatisMapperService {
 	
 	/**
 	 * 获取修改字段全部列和值
-	 * @author johnDeng
 	 * @dataTime 2019年3月14日下午5:44:09
 	 * @param tableName
 	 * @return
